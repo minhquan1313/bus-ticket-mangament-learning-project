@@ -1,0 +1,30 @@
+composer install
+
+// Tao controller
+php artisan make:controller ProductController
+
+// Tao moi model (1 table trong database)
+php artisan make:model Category
+
+// Tao database auth
+php artisan migrate
+
+composer require laravel/breeze
+composer require laravel/ui
+php artisan ui bootstrap
+php artisan ui bootstrap --auth
+
+
+
+// Start server
+php artisan serve
+
+
+1:  Chay "composer install"
+2:  Tao db voi mysql cua xampp voi ten "productsdb"
+3:  Giai nen product_data.7z va import vao "productsdb"
+4:  Chay "php artisan serve"
+
+// De co route login
+5:  Chay "npm i"
+6:  Chay "npm run dev"

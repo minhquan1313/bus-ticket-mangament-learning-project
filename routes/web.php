@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Client routes
+ */
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('client.home');
+})->name('home');
+
+
+/**
+ * Admin routes
+ */
+Route::get('/admin', function () {
+    return view('admin.home');
+})->name('admin.home');

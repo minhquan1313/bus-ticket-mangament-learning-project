@@ -9,9 +9,9 @@
 @endsection
 
 @section('master_body')
-    <div id="main">
+    <div id="main" class="min-h-screen flex flex-col">
         @include('client.header.index')
-        <div>
+        <div class="flex-1 bg-white">
             @yield('body')
         </div>
         @include('client.footer.index')

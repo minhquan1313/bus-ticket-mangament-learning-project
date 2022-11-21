@@ -13,8 +13,15 @@ module.exports = {
             fontFamily: {
                 sans: ["SVN-Poppins", ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                oYellow: "#F7B538",
+                oLightGray: "#ADB5BD",
+                oLightGray1: "#F8F9FA",
+                oWhite: "#F8F9FA",
+            },
         },
         container: {
+            center: true,
             padding: {
                 DEFAULT: "1rem",
                 md: "1.25rem",

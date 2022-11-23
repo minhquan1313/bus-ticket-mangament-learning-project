@@ -1,4 +1,4 @@
-<header class="sticky top-0 bg-oWhite px-5 flex items-center">
+<header class="sticky top-0 z-10 bg-oWhite px-5 flex items-center">
     <ul class="flex flex-1">
         @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'booking', 'n' => 'Đặt vé'], ['r' => 'help', 'n' => 'Hỗ trợ']] as $nav)
             <li>

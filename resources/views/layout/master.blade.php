@@ -17,7 +17,7 @@
     @vite('resources/css/fonts/materialIcon.css')
 </head>
 
-<body class="text-[#343A40] bg-oWhite">
+<body class="text-[#343A40] bg-oWhite ">
     @yield('master_body')
 </body>
 

@@ -15,6 +15,8 @@
 
     <!-- Fonts Material icons -->
     @vite('resources/css/fonts/materialIcon.css')
+
+    @yield('master_head')
 </head>
 
 <body class="text-[#343A40] bg-oWhite ">

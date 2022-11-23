@@ -18,6 +18,7 @@ module.exports = {
                 oLightGray: "#ADB5BD",
                 oLightGray1: "#F8F9FA",
                 oWhite: "#F8F9FA",
+                oBlack: "#212529",
             },
         },
         container: {

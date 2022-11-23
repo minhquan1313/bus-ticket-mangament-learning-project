@@ -2,6 +2,8 @@
 @section('title', 'Trang chủ')
 
 @section('body')
+    @vite('resources/js/home.js')
+
     <div class="relative aspect-[8/3]">
         <div>
             <img src="/images/banner.png" alt="" class="object-cover object-center w-full h-full">
@@ -21,7 +23,7 @@
                     <input class="peer outline-none placeholder:text-sm w-48" type="text" value=""
                         placeholder="Điểm đón" name="from">
 
-                    <div
+                    <div id="fromSuggest"
                         class="absolute bottom-full inset-x-0 bg-white rounded-md shadow-md min-w-[8rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
 
                         <div class="py-1">
@@ -30,6 +32,18 @@
                                     <p class="px-2 py-1 block text-sm text-oLightGray hover:bg-oYellow cursor-pointer transition hover:text-oWhite"
                                         title="Thành Phố Hồ Chí Minh">
                                         Thành Phố Hồ Chí Minh
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="px-2 py-1 block text-sm text-oLightGray hover:bg-oYellow cursor-pointer transition hover:text-oWhite"
+                                        title="Thành Phố Hồ Chí Minh">
+                                        Tỉnh Thừa Thiên Huế
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="px-2 py-1 block text-sm text-oLightGray hover:bg-oYellow cursor-pointer transition hover:text-oWhite"
+                                        title="Thành Phố Hồ Chí Minh">
+                                        Tỉnh Bến Tre
                                     </p>
                                 </li>
                             </ul>
@@ -45,7 +59,7 @@
                     <input class="peer outline-none placeholder:text-sm w-48" type="text" value=""
                         placeholder="Điểm đến" name="to">
 
-                    <div
+                    <div id="toSuggest"
                         class="absolute bottom-full inset-x-0 bg-white rounded-md shadow-md min-w-[8rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
 
                         <div class="py-1">
@@ -66,8 +80,8 @@
                         event
                     </span>
 
-                    <input class="outline-none placeholder:text-sm w-36" type="date" value="{{ date('Y-m-d') }}"
-                        placeholder="Thời gian">
+                    <input class="outline-none placeholder:text-sm w-36 cursor-pointer" type="date"
+                        value="{{ date('Y-m-d') }}" placeholder="Thời gian">
                 </label>
                 <label class="flex items-center px-4 gap-4 h-10 bg-white rounded-r-xl" title="Số người">
                     <span class="material-symbols-outlined">
@@ -88,4 +102,5 @@
             </div>
         </form>
     </div>
+
 @endsection

@@ -18,7 +18,7 @@
 @section('master_body')
     <div id="main" class="min-h-screen flex flex-col">
         @include('client.header.index')
-        <div class="flex-1 bg-white">
+        <div class="flex-1 bg-oBlack1">
             @yield('body')
         </div>
         @include('client.footer.index')

@@ -19,7 +19,7 @@
     @yield('master_head')
 </head>
 
-<body class="text-[#343A40] bg-oWhite ">
+<body class="text-[#343A40]">
     @yield('master_body')
 </body>
 

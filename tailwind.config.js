@@ -16,7 +16,6 @@ module.exports = {
             colors: {
                 oYellow: "#F7B538",
                 oLightGray: "#ADB5BD",
-                oLightGray1: "#F8F9FA",
                 oWhite: "#F8F9FA",
                 oBlack: "#212529",
                 oBlack1: "#343A40",

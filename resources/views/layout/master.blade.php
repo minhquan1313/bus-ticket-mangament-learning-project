@@ -19,7 +19,11 @@
     @yield('master_head')
 </head>
 
-<body class="text-[#343A40]">
+<body @hasSection('master_body_class')
+    class="@yield('master_body_class')"
+    @endif
+    >
+
     @yield('master_body')
 </body>
 

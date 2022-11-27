@@ -11,17 +11,17 @@
         </div>
 
         <form action="javascript:;" method="GET"
-            class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center rounded-xl bg-oBlack px-4 p-3 space-x-3">
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center rounded-xl bg-oBlack px-4 p-3 space-x-3">
 
-            {{-- <div class="rounded-xl overflow-hidden divide-x"></div> --}}
-            <div class="flex rounded-xl divide-x divide-oBlack">
-                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current text-oBlack1 rounded-l-xl">
+            <div class="flex rounded-xl divide-x divide-oBlack text-oBlack1">
+                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current rounded-l-xl">
                     <span class="material-symbols-outlined text-oWhite">
                         travel_explore
                     </span>
 
-                    <input class="peer outline-none bg-transparent text-oWhite placeholder:text-sm w-48" type="text"
-                        value="" placeholder="Điểm đón" name="from">
+                    <input
+                        class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-48"
+                        type="text" value="" placeholder="Điểm đón" name="from">
 
                     <div id="fromSuggest"
                         class="absolute bottom-full inset-x-0 bg-current rounded-md shadow-md min-w-[8rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
@@ -41,13 +41,14 @@
                     </div>
                 </label>
 
-                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current text-oBlack1">
+                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current">
                     <span class="material-symbols-outlined text-oWhite">
                         flag
                     </span>
 
-                    <input class="peer outline-none bg-transparent text-oWhite placeholder:text-sm w-48" type="text"
-                        value="" placeholder="Điểm đến" name="to">
+                    <input
+                        class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-48"
+                        type="text" value="" placeholder="Điểm đến" name="to">
 
                     <div id="toSuggest"
                         class="absolute bottom-full inset-x-0 bg-current rounded-md shadow-md min-w-[8rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
@@ -67,22 +68,23 @@
                     </div>
                 </label>
 
-                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current text-oBlack1">
+                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current">
                     <span class="material-symbols-outlined text-oWhite">
                         event
                     </span>
 
-                    <input class="peer outline-none bg-transparent text-oWhite placeholder:text-sm w-36 cursor-pointer"
-                        type="date" value="{{ date('Y-m-d') }}" placeholder="Thời gian">
+                    <input
+                        class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-36 cursor-pointer"
+                        type="date" value="{{ date('Y-m-d') }}" placeholder="Thời gian" name="time">
                 </label>
-                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current text-oBlack1 rounded-r-xl"
-                    title="Số người">
+                <label class="relative group flex items-center px-4 gap-4 h-10 bg-current rounded-r-xl" title="Số người">
                     <span class="material-symbols-outlined text-oWhite">
                         person_add
                     </span>
 
-                    <input class="peer outline-none bg-transparent text-oWhite placeholder:text-sm w-20" type="number"
-                        value="1" placeholder="Số người">
+                    <input
+                        class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-20"
+                        type="number" value="1" placeholder="Số người" name="person_count">
                 </label>
             </div>
 

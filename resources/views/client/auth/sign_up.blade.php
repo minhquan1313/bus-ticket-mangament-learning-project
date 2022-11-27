@@ -1,5 +1,5 @@
 @extends('client.auth.auth_layout')
-@section('title', 'Đăng nhập')
+@section('title', 'Đăng ký')
 
 @section('auth_form')
     <form action="javascript:;" method="POST" class="grid gap-2 text-oBlack2">
@@ -27,10 +27,30 @@
             </div>
         </label>
 
+        <div class="flex divide-x divide-oBlack max-w-full rounded-xl overflow-hidden">
+            <label class="flex flex-[3] items-center px-4 gap-4 h-10 bg-current overflow-hidden">
+                <span class="material-symbols-outlined text-oWhite">
+                    event
+                </span>
+
+                <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
+                    type="text" value="" placeholder="Họ & tên đệm" name="tel">
+            </label>
+
+            <label class="flex flex-[2] items-center px-4 gap-4 h-10 bg-current overflow-hidden">
+                <span class="material-symbols-outlined text-oWhite">
+                    event
+                </span>
+
+                <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
+                    type="text" value="" placeholder="Tên" name="tel">
+            </label>
+        </div>
+
         <div class="grid gap-1">
             <button class="flex items-center justify-center px-5 h-10 bg-oYellow text-oWhite rounded-xl transition"
                 type="submit">
-                Đăng nhập
+                Đăng ký
             </button>
 
             <p class="text-xs text-oLightGray text-center">
@@ -38,7 +58,7 @@
             </p>
 
             <a href="#" class="flex items-center justify-center px-5 h-10 bg-oGreen text-oWhite rounded-xl">
-                Đăng ký
+                Đăng nhập
             </a>
         </div>
 

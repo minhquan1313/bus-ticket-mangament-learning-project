@@ -1,13 +1,13 @@
 <header class="sticky top-0 z-10 bg-oBlack px-5 flex items-center">
     <ul class="flex flex-1">
-        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'booking', 'n' => 'Đặt vé'], ['r' => 'help', 'n' => 'Hỗ trợ']] as $nav)
+        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'auth.sign_in', 'n' => 'Đặt vé'], ['r' => 'auth.sign_up', 'n' => 'Hỗ trợ']] as $nav)
             <li>
-                <a href="#"
-                    class="p-3 block text-sm text-oLightGray hover:text-oYellow transition">{{ $nav['n'] }}</a>
+                <a href="{{ route($nav['r']) }}"
+                    class="p-3 block text-sm hover:text-oYellow transition {{ Request::route()->getName() == $nav['r'] ? 'text-oYellow' : 'text-oLightGray' }} ">{{ $nav['n'] }}</a>
             </li>
         @endforeach
     </ul>
-    <a href="#" class="flex items-center justify-center aspect-square bg-oBlack1 p-1 rounded-full h-9">
+    <a href="{{ route('home') }}" class="flex items-center justify-center aspect-square bg-oBlack1 p-1 rounded-full h-9">
         <svg class="scale-75" width="24" height="28" viewBox="0 0 24 28" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path

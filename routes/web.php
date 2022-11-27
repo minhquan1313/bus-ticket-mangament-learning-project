@@ -28,6 +28,11 @@ Route::get('/2', function () {
     return view('client.auth.sign_up');
 })->name('auth.sign_up');
 
+Route::get('/3', function () {
+    return view('client.booking.index');
+})->name('booking');
+
+
 
 /**
  * Admin routes

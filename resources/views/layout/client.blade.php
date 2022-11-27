@@ -11,6 +11,7 @@
 @endsection
 
 @section('master_head')
+    @parent
     <meta name="theme-color" content="#212529">
     @vite('resources/js/submitDisableOnClick.js')
 @endsection

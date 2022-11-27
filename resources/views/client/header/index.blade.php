@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-10 bg-oBlack px-5 flex items-center">
     <ul class="flex flex-1">
-        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'auth.sign_in', 'n' => 'Đặt vé'], ['r' => 'auth.sign_up', 'n' => 'Hỗ trợ']] as $nav)
+        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'auth.sign_in', 'n' => 'Đặt vé'], ['r' => 'auth.sign_up', 'n' => 'Hỗ trợ'], ['r' => 'booking', 'n' => 'booking']] as $nav)
             <li>
                 <a href="{{ route($nav['r']) }}"
                     class="p-3 block text-sm hover:text-oYellow transition {{ Request::route()->getName() == $nav['r'] ? 'text-oYellow' : 'text-oLightGray' }} ">{{ $nav['n'] }}</a>

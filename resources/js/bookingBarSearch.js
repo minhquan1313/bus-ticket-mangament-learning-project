@@ -3,26 +3,34 @@ function removeAccents(str) {
 }
 
 const suggestMenuToInput = (inp, ...li) => {
+    const clickHandler = (e) => {
+        inp.value = e.target.innerText;
+    };
+    const dataAttr = "data-text-normalized";
+
     if (!inp) return;
 
     li.forEach((r) => {
         if (!r) return;
 
-        r.setAttribute("data-text", removeAccents(r.innerText));
+        const text = r.innerText;
 
-        r.addEventListener("click", (e) => {
-            inp.value = e.target.innerText;
-        });
+        r.setAttribute(dataAttr, removeAccents(text));
+
+        r.addEventListener("click", clickHandler);
     });
 
-    inp.addEventListener("input", (e) => {
-        console.log(inp.value);
-        const value = inp.value.trim();
+    inp.addEventListener("input", () => {
+        const value = removeAccents(inp.value.trim());
+        // const value = inp.value.trim().replace(/\s+/, "|");
 
         const reg = new RegExp(value, "iu");
+        // const reg = new RegExp(value, "iu");
 
         li.forEach((r) => {
-            const t = r.getAttribute("data-text");
+            const t = r.getAttribute(dataAttr);
+            // const t = `${r.getAttribute(dataAttr)} ${r.innerText}`;
+            console.log({ t });
             const isMatch = t.match(reg);
 
             r.classList.remove("hidden");
@@ -35,10 +43,10 @@ const suggestMenuToInput = (inp, ...li) => {
     });
 };
 
-const fromInp = document.querySelector("input[name=from]");
+const fromInp = document.querySelector("#fromInp");
 const fromSuggest = document.querySelector("#fromSuggest");
 
-const toInp = document.querySelector("input[name=to]");
+const toInp = document.querySelector("#toInp");
 const toSuggest = document.querySelector("#toSuggest");
 
 suggestMenuToInput(fromInp, ...fromSuggest.querySelectorAll("li"));

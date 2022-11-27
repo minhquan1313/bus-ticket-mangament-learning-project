@@ -20,6 +20,14 @@ Route::get('/', function () {
     return view('client.home');
 })->name('home');
 
+Route::get('/1', function () {
+    return view('client.auth.sign_in');
+})->name('auth.sign_in');
+
+Route::get('/2', function () {
+    return view('client.auth.sign_up');
+})->name('auth.sign_up');
+
 
 /**
  * Admin routes

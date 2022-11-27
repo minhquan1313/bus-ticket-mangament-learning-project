@@ -15,11 +15,19 @@ module.exports = {
             },
             colors: {
                 oYellow: "#F7B538",
+
+                oRed: "#EE6055",
+
+                oGreen: "#60D394",
+
                 oLightGray: "#ADB5BD",
-                oLightGray1: "#F8F9FA",
+
                 oWhite: "#F8F9FA",
+
                 oBlack: "#212529",
                 oBlack1: "#343A40",
+                oBlack2: "#495057",
+                oBlack3: "#6C757D",
             },
         },
         container: {

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="grid grid-cols-12 gap-5 py-5">
             <div class="col-span-2 flex justify-center h-full">
-                <a href="#" class="" aria-label="OBus logo">
+                <a href="{{ route('home') }}" class="" aria-label="OBus logo">
                     <svg class="w-auto h-full min-h-[7rem]" width="24" height="28" viewBox="0 0 24 28"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -27,7 +27,8 @@
                 </a>
             </div>
             <div class="col-span-3">
-                <p class=""> Công ty O-Bus, vé xe khách rẻ như vé xe buýt, chuyên vận chuyển khách khắp cả nước.
+                <p class=""> Công ty {{ env('APP_NAME') }}, vé xe khách rẻ như vé xe
+                    buýt, chuyên vận chuyển khách khắp cả nước.
                 </p>
             </div>
 

@@ -1,5 +1,5 @@
-<div class="relative hover:shadow-md transition rounded-full bg-white group">
-    <div class="flex items-center p-1 space-x-2 cursor-pointer">
+<div class="relative hover:shadow-md transition rounded-full bg-current text-oBlack1  group">
+    <div class="flex items-center p-1 space-x-2 cursor-pointer text-oLightGray">
         <span class="material-symbols-outlined">
             menu
         </span>
@@ -10,8 +10,9 @@
     </div>
 
     <div
-        class="absolute right-0 top-full translate-y-2 bg-white rounded-md shadow-md min-w-[8rem] transition pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100">
+        class="absolute right-0 top-full translate-y-2 bg-current rounded-md shadow-lg min-w-[8rem] transition pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 focus-within:pointer-events-auto focus-within:opacity-100">
 
+        {{-- Hidden bridge --}}
         <div class="absolute inset-x-0 bottom-full h-2"></div>
 
         <ul class="py-1">

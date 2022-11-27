@@ -1,14 +1,15 @@
 <header class="sticky top-0 z-10 bg-oBlack px-5 flex items-center">
     <ul class="flex flex-1">
-        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'booking', 'n' => 'Đặt vé'], ['r' => 'help', 'n' => 'Hỗ trợ']] as $nav)
+        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'auth.sign_in', 'n' => 'Đặt vé'], ['r' => 'auth.sign_up', 'n' => 'Hỗ trợ']] as $nav)
             <li>
-                <a href="#"
-                    class="p-3 block text-sm text-oLightGray hover:text-oYellow transition">{{ $nav['n'] }}</a>
+                <a href="{{ route($nav['r']) }}"
+                    class="p-3 block text-sm hover:text-oYellow transition {{ Request::route()->getName() == $nav['r'] ? 'text-oYellow' : 'text-oLightGray' }} ">{{ $nav['n'] }}</a>
             </li>
         @endforeach
     </ul>
-    <a href="#" class="flex items-center justify-center aspect-square bg-oBlack1 p-1 rounded-full h-9 ">
-        <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="{{ route('home') }}" class="flex items-center justify-center aspect-square bg-oBlack1 p-1 rounded-full h-9">
+        <svg class="scale-75" width="24" height="28" viewBox="0 0 24 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M11.24 0H3.51398C3.16327 0 2.87894 0.288265 2.87894 0.643833C2.87894 0.9994 3.16327 1.28767 3.51398 1.28767H6.81499C6.11855 1.72986 5.49059 2.27294 4.95137 2.89686H0.635043C0.28433 2.8969 0 3.1852 0 3.54077C0 3.89634 0.28433 4.1846 0.635043 4.1846H4.03268C3.30002 5.44432 2.8789 6.91154 2.8789 8.47676C2.8789 10.298 3.44852 11.9869 4.4164 13.3702H2.61456C2.26384 13.3702 1.97951 13.6585 1.97951 14.014C1.97951 14.3696 2.26384 14.6579 2.61456 14.6579H5.52481C5.92077 15.0344 6.3528 15.3723 6.81499 15.6658H0.700545C0.349832 15.6658 0.0655027 15.9541 0.0655027 16.3096C0.0655027 16.6652 0.349832 16.9535 0.700545 16.9535H11.24C15.8503 16.9535 19.601 13.1508 19.601 8.47672C19.601 3.80264 15.8503 0 11.24 0ZM14.3248 12.702C14.3131 12.712 14.3015 12.7221 14.2889 12.7313C14.2747 12.7417 14.2602 12.7514 14.2455 12.7605C13.397 13.3742 12.3594 13.7356 11.24 13.7356C10.1206 13.7356 9.08293 13.3742 8.23439 12.7605C8.21968 12.7514 8.20521 12.7417 8.19105 12.7313C8.17849 12.722 8.16689 12.7119 8.15518 12.702C6.88054 11.7429 6.05285 10.206 6.05285 8.47676C6.05285 5.57699 8.37979 3.21784 11.24 3.21784C14.1001 3.21784 16.4271 5.57699 16.4271 8.47676C16.4271 10.2061 15.5994 11.7429 14.3248 12.702Z"
                 fill="#F7B538" />

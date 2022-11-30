@@ -1,21 +1,25 @@
 @extends('layout.client')
-
-{{-- @section('body_class', 'flex') --}}
-
-{{-- @section('master_head')
-@parent
-    @vite('resources/js/passwordToggle.js')
-@endsection --}}
+@section('title', 'Đặt vé')
 
 @section('body')
-    <div class="flex my-6">
-        <form action="javascript:;" method="GET" class="mx-auto">
-            @include('client.booking_bar', ['subPos' => 'bottom'])
-        </form>
-    </div>
+    <div class="space-y-6 py-6">
 
-    <div class="container flex my-7">
-        <p class="text-center">Các chuyến được tìm thấy</p>
+        <div class="flex">
+            <form action="javascript:;" method="GET" class="mx-auto">
+                @include('client.booking_bar', ['subPos' => 'bottom'])
+            </form>
+        </div>
 
+        <p class="text-center text-2xl font-semibold">Các chuyến được tìm thấy</p>
+
+        <div class="container space-y-6">
+            <div class="bg-oBlack2 rounded-xl">
+                <ul class="grid grid-cols-4 gap-5 p-5">
+                    <li>
+                        @include('client.booking.ticket_card')
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 @endsection

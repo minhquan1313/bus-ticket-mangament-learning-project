@@ -30,7 +30,10 @@ Route::get('/2', function () {
 
 Route::get('/3', function () {
     return view('client.booking.index');
-})->name('booking');
+})->name('booking.index');
+Route::get('/4', function () {
+    return view('client.booking.detail');
+})->name('booking.detail');
 
 
 

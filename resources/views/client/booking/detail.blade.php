@@ -1,10 +1,5 @@
 @extends('layout.client')
 @section('title', 'Thông tin vé xe')
-{{-- @section('master_head')
-    @parent
-    @vite('resources/js/passwordToggle.js')
-
-@endsection --}}
 
 @section('body')
     <div class="space-y-6 py-6">

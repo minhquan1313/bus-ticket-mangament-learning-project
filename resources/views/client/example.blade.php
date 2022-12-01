@@ -2,7 +2,7 @@
 @section('title', '')
 @section('master_head')
     @parent
-    @vite('resources/js/passwordToggle.js')
+    {{-- @vite('resources/js/passwordToggler.js') --}}
 @endsection
 
 @section('body')

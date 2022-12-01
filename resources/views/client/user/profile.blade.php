@@ -4,6 +4,7 @@
 
 @section('master_head')
     @parent
+    @vite('resources/js/passwordToggler.js')
     @vite('resources/js/user.profile.js')
 @endsection
 
@@ -69,20 +70,41 @@
                         class="hidden flex-col p-5 peer-checked:flex peer-checked:min-h-[30rem]">
                         <div class="flex flex-1 gap-5">
                             <div class="flex-1 text-oBlack1 space-y-2">
-                                <label
-                                    class="relative group flex items-center px-4 gap-4 h-10 bg-current rounded-xl cursor-text">
+                                <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
                                     <input
-                                        class="outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-full"
-                                        type="password" value="{{ '' }}" placeholder="Mật khẩu cũ"
-                                        name="oldPassword">
+                                        class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
+                                        type="password" value="" placeholder="Mật khẩu cũ" name="oldPassword">
+
+                                    <div class="flex items-center cursor-pointer h-full" title='Toggle password'>
+                                        <span id="password_toggle1" class="material-symbols-outlined text-oWhite">
+                                            visibility_off
+                                        </span>
+                                    </div>
                                 </label>
 
-                                <label
-                                    class="relative group flex items-center px-4 gap-4 h-10 bg-current rounded-xl cursor-text">
+                                <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
                                     <input
-                                        class="outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-full"
-                                        type="password" value="{{ '' }}" placeholder="Mật khẩu mới"
-                                        name="newPassword">
+                                        class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
+                                        type="password" value="" placeholder="Mật khẩu mới" name="newPassword">
+
+                                    <div class="flex items-center cursor-pointer h-full" title='Toggle password'>
+                                        <span id="password_toggle2" class="material-symbols-outlined text-oWhite">
+                                            visibility_off
+                                        </span>
+                                    </div>
+                                </label>
+
+                                <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
+                                    <input
+                                        class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
+                                        type="password" value="" placeholder="Nhập lại mật khẩu mới"
+                                        name="newPasswordRepeat">
+
+                                    <div class="flex items-center cursor-pointer h-full" title='Toggle password'>
+                                        <span id="password_toggle3" class="material-symbols-outlined text-oWhite">
+                                            visibility_off
+                                        </span>
+                                    </div>
                                 </label>
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 @section('body_class', 'flex')
 
 @section('master_head')
+@parent
     @vite('resources/js/passwordToggle.js')
 @endsection
 

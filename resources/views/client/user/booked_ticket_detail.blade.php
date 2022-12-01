@@ -51,15 +51,36 @@
                                 <span class="font-bold"> 39</span>
                             </p>
 
+                            <p class="">Ngày đặt vé:
+                                <span class="font-bold"> 16:30, 06, tháng 1, năm 2017 </span>
+                            </p>
+
                             <p class="">Ngày khởi hành:
                                 <span class="font-bold"> 16:30, 06, tháng 1, năm 2017 </span>
+                            </p>
+
+                            <p class="">Trạng thái:
+                                <span class="font-bold"> Có thể dùng </span>
                             </p>
                         </div>
                     </div>
                 </div>
-
             </div>
 
+            <div class="flex">
+                <div class="flex ml-auto gap-3 whitespace-nowrap">
+
+                    <a href="{{ route('user.booked') }}"
+                        class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oBlack2">
+                        Quay lại
+                    </a>
+
+                    <a href="{{ $href ?? '#' }}"
+                        class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oRed">
+                        Huỷ vé
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -3,7 +3,7 @@
     "scripts": {
         "macos": "source ~/.bash_profile",
         "serve": "php artisan serve",
-        "test": "npm run            ",
+        "test": "npm run serve",
         "dev": "vite",
         "build": "vite build"
     },

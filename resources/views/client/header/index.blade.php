@@ -1,8 +1,13 @@
 <header class="sticky top-0 z-10 bg-oBlack px-5 flex items-center">
     <ul class="flex flex-1">
-        @foreach ([['r' => 'home', 'n' => 'Trang chủ'], ['r' => 'auth.sign_in', 'n' => 'Đặt vé'], ['r' => 'auth.sign_up', 'n' => 'Hỗ trợ'], ['r' => 'booking.index', 'n' => 'booking']] as $nav)
+        @php
+            $routeKey = 'r';
+            $routeTitle = 'n';
+            $hd = [[$routeKey => 'home', $routeTitle => 'Trang chủ'], [$routeKey => 'auth.sign_in', $routeTitle => 'Đặt vé'], [$routeKey => 'auth.sign_up', $routeTitle => 'Hỗ trợ'], [$routeKey => 'booking.index', $routeTitle => 'booking'], [$routeKey => 'user.booked_ticket', $routeTitle => 'booked']];
+        @endphp
+        @foreach ($hd as $nav)
             <li>
-                <a href="{{ route($nav['r']) }}"
+                <a href="{{ route($nav[$routeKey]) }}"
                     class="p-3 block text-sm hover:text-oYellow transition {{ Request::route()->getName() == $nav['r'] ? 'text-oYellow' : 'text-oLightGray' }} ">{{ $nav['n'] }}</a>
             </li>
         @endforeach

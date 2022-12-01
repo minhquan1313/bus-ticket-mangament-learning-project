@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-2 bg-oBlack2 rounded-xl p-2 space-y-2">
+                <div class="col-span-2 bg-oBlack2 rounded-xl p-2 space-y-3">
                     <p class="text-center text-2xl font-semibold">Chọn khung giờ</p>
 
                     <ul class="grid grid-cols-10 rounded-xl bg-oBlack1 border border-oBlack">
@@ -72,7 +72,7 @@
                                 <label>
                                     <input type="radio" name="time" class="hidden peer" value="13:30">
                                     <div
-                                        class="flex items-center justify-center rounded-xl py-2 px-4 transition hover:bg-oYellow peer-checked:bg-oYellow peer-checked:brightness-75">
+                                        class="flex items-center justify-center rounded-xl py-2 px-4 transition duration-300 hover:bg-oYellow peer-checked:bg-oYellow peer-checked:brightness-90">
                                         13:30
                                     </div>
                                 </label>
@@ -81,11 +81,46 @@
                     </ul>
                 </div>
 
-                <div class="bg-oBlack2 rounded-xl">
-                    <div class="flex gap-5 p-8">
-                        hi
+                <form action="javascript:;" method="POST" class="bg-oBlack2 rounded-xl">
+                    <div class="p-2 px-4 space-y-3">
+
+                        <p class="text-center text-2xl font-semibold">Tóm tắt</p>
+
+                        <ul class="space-y-2">
+                            <li>
+                                <p>Từ :
+                                    <span class="font-bold"> Thành Phố Hồ Chí Minh </span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>Đến:
+                                    <span class="font-bold"> Tỉnh Thừa Thiên Huế </span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>Thời gian khởi hành:
+                                    <span class="font-bold"> DATE() </span>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p>Loại xe:
+                                    <span class="font-bold"> Thường/Vip </span>
+                                </p>
+                            </li>
+                        </ul>
+
+                        <p class="text-right text-2xl font-semibold">Giá</p>
+                        <p class="text-right text-2xl font-semibold text-oYellow">120.000d</p>
                     </div>
-                </div>
+
+                    <button type="submit"
+                        class="flex items-center justify-center rounded-b-xl px-5 h-10 bg-oYellow text-oWhite w-full">
+                        Đặt ngay
+                    </button>
+                </form>
             </div>
 
         </div>

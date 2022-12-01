@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 button:disabled {
-    @apply grayscale transition duration-300 rounded-xl;
+    @apply grayscale transition duration-300;
 }

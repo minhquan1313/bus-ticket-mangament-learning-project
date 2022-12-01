@@ -1,3 +1,21 @@
+@php
+    $title = 'Button';
+    $colorClass = 'bg-oYellow';
+@endphp
+
+@isset($type)
+    @php
+        
+        $objTit = ['seeDetail' => ['t' => 'Xem chi tiết', 'c' => 'bg-oGreen'], 'cancled' => ['t' => 'Đã huỷ chuyến', 'c' => 'bg-oRed'], 'bookNow' => ['t' => 'Đặt ngay', 'c' => 'bg-oYellow']];
+        
+        $title = $objTit[$type]['t'];
+        $colorClass = $objTit[$type]['c'];
+    @endphp
+@endisset
+
+@php
+@endphp
+
 <div class="relative text-oBlack1 bg-current flex rounded-xl border border-oBlack h-full">
     {{-- PREMIUM --}}
     <div class="group absolute top-0 left-0 rounded-tl-xl rounded-br-xl bg-oYellow shadow-xl drop-shadow-lg">
@@ -24,7 +42,7 @@
         </div>
     </div>
 
-    <a href="{{ route('booking.detail') }}" class="w-1/2 flex-shrink-0 overflow-hidden rounded-l-xl">
+    <a href="{{ $href ?? '#' }}" class="w-1/2 flex-shrink-0 overflow-hidden rounded-l-xl">
         <img src="/images/bus.jpg" alt="Img" class="w-full aspect-[13/17] object-cover">
     </a>
 
@@ -44,9 +62,9 @@
         <p class="m-2 text-sm">Giá:
             <span class="text-oYellow font-bold"> 60.000đ </span>
         </p>
-        <a href="{{ route('booking.detail') }}"
-            class="flex items-center justify-center rounded-br-xl px-5 h-10 bg-oYellow text-oWhite w-full">
-            Đặt ngay
+        <a href="{{ $href ?? '#' }}"
+            class="flex items-center justify-center rounded-br-xl px-5 h-10 text-oWhite w-full {{ $colorClass }}">
+            {{ $title }}
         </a>
     </div>
 </div>

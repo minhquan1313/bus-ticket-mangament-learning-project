@@ -34,6 +34,15 @@ Route::get('/3', function () {
 Route::get('/4', function () {
     return view('client.booking.detail');
 })->name('booking.detail');
+Route::get('/5', function () {
+    return view('client.user.booked_ticket');
+})->name('user.booked');
+Route::get('/6', function () {
+    return view('client.user.booked_ticket_detail');
+})->name('user.booked_detail');
+Route::get('/7', function () {
+    return view('client.user.profile');
+})->name('user.profile');
 
 
 

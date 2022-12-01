@@ -16,7 +16,10 @@
             <div class="bg-oBlack2 rounded-xl">
                 <ul class="grid grid-cols-4 gap-5 p-5">
                     <li>
-                        @include('client.booking.ticket_card')
+                        @include('client.booking.ticket_card', [
+                            'type' => 'bookNow',
+                            'href' => route('booking.detail'),
+                        ])
                     </li>
                 </ul>
             </div>

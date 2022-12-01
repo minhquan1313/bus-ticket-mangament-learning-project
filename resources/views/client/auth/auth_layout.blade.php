@@ -3,8 +3,9 @@
 @section('body_class', 'flex')
 
 @section('master_head')
-@parent
-    @vite('resources/js/passwordToggle.js')
+    @parent
+    @vite('resources/js/passwordToggler.js')
+    @vite('resources/js/auth.inputPassword.js')
 @endsection
 
 @section('body')

@@ -3,7 +3,7 @@
         @php
             $routeKey = 'r';
             $routeTitle = 'n';
-            $hd = [[$routeKey => 'home', $routeTitle => 'Trang chủ'], [$routeKey => 'auth.sign_in', $routeTitle => 'Đặt vé'], [$routeKey => 'auth.sign_up', $routeTitle => 'Hỗ trợ'], [$routeKey => 'booking.index', $routeTitle => 'booking'], [$routeKey => 'user.booked_ticket', $routeTitle => 'booked']];
+            $hd = [[$routeKey => 'home', $routeTitle => 'Trang chủ'], [$routeKey => 'auth.sign_in', $routeTitle => 'Đặt vé'], [$routeKey => 'auth.sign_up', $routeTitle => 'Hỗ trợ'], [$routeKey => 'booking.index', $routeTitle => 'booking'], [$routeKey => 'user.booked', $routeTitle => 'booked'], [$routeKey => 'user.profile', $routeTitle => 'Profile']];
         @endphp
         @foreach ($hd as $nav)
             <li>

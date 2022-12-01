@@ -3,7 +3,6 @@
 @section('master_head')
     @parent
     @vite('resources/js/passwordToggle.js')
-
 @endsection
 
 @section('body')

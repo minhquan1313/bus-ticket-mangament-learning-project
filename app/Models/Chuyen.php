@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Chuyen extends Model
 {
     use HasFactory;
+    protected $table = "chuyen";
+    public $timestamps = true;
+    protected
+        $fillable = [
+            'chuyen_id', 'from_id', 'to_id'
+        ];
 }

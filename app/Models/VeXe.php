@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class VeXe extends Model
 {
     use HasFactory;
+    protected $table = "ve_xe";
+    public $timestamps = true;
+    protected
+        $fillable = [
+            've_xe_id', 'khach_hang_id', 'chuyen_id', 'xe_id', 'thoi_gian_khoi_hanh', 'so_nguoi', 'trang_thai_id'
+        ];
 }

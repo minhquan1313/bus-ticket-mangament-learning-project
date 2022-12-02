@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
  */

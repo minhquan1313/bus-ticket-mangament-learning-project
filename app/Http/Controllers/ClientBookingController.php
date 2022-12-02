@@ -29,17 +29,6 @@ class ClientBookingController extends Controller
         $time_ = date('Y-m-d', strtotime($time . ' +1 day'));
 
         $chuyen_va_xe = ChuyenVaXe::where('chuyen_id', $chuyenId)->where('thoi_gian_khoi_hanh', '>=',  $time)->where('thoi_gian_khoi_hanh', '<=',  $time_)->get();
-        $chuyen_va_xe_ = Arr::sort($chuyen_va_xe, function ($cvx) {
-            // Sort the student's scores by their test score.
-            return $cvx->thoi_gian_khoi_hanh;
-        });
-
-        foreach ($chuyen_va_xe as $key => $row) {
-            $count[$key] = $row['thoi_gian_khoi_hanh'];
-        }
-
-
-        return $chuyen_va_xe_;
 
         foreach ($chuyen_va_xe as $cvx) {
             $cvx->thoi_gian_khoi_hanh = date('Y-m-d', strtotime($time));

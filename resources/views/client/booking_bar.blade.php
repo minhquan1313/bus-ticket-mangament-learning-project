@@ -27,18 +27,18 @@
 
             <input id="fromInp"
                 class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-48"
-                type="text" value="" placeholder="Điểm đón" name="from">
+                type="text" value="{{ $from ?? '' }}" placeholder="Điểm đón" name="from" required>
 
             <div id="fromSuggest"
                 class="absolute {{ $className }} inset-x-0 bg-current rounded-md shadow-md min-w-[12rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
 
                 <div class="py-1">
                     <ul class="max-h-72 overflow-y-scroll">
-                        @foreach (['Thành Phố Hồ Chí Minh', 'Tỉnh Thừa Thiên Huế', 'Tỉnh Bến Tre'] as $province)
+                        @foreach ($tinh as $province)
                             <li>
                                 <p class="px-2 py-1 block text-sm text-oLightGray cursor-pointer transition hover:bg-oYellow hover:text-oWhite"
-                                    title="{{ $province }}">
-                                    {{ $province }}
+                                    title="{{ $province->ten_tinh }}">
+                                    {{ $province->ten_tinh }}
                                 </p>
                             </li>
                         @endforeach
@@ -54,18 +54,18 @@
 
             <input id="toInp"
                 class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-48"
-                type="text" value="" placeholder="Điểm đến" name="to">
+                type="text" value="{{ $to ?? '' }}" placeholder="Điểm đến" name="to" required>
 
             <div id="toSuggest"
                 class="absolute {{ $className }} inset-x-0 bg-current rounded-md shadow-md min-w-[12rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
 
                 <div class="py-1">
                     <ul class="max-h-72 overflow-y-scroll">
-                        @foreach (['Thành Phố Hồ Chí Minh', 'Tỉnh Thừa Thiên Huế', 'Tỉnh Bến Tre'] as $province)
+                        @foreach ($tinh as $province)
                             <li>
                                 <p class="px-2 py-1 block text-sm text-oLightGray cursor-pointer transition hover:bg-oYellow hover:text-oWhite"
-                                    title="{{ $province }}">
-                                    {{ $province }}
+                                    title="{{ $province->ten_tinh }}">
+                                    {{ $province->ten_tinh }}
                                 </p>
                             </li>
                         @endforeach
@@ -81,7 +81,7 @@
 
             <input
                 class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-36 cursor-pointer"
-                type="date" value="{{ date('Y-m-d') }}" placeholder="Thời gian" name="time">
+                type="date" value="{{ $time ?? date('Y-m-d') }}" placeholder="Thời gian" name="time">
         </label>
         <label class="relative group flex items-center px-4 gap-4 h-10 bg-current rounded-r-xl" title="Số người">
             <span class="material-symbols-outlined text-oWhite">
@@ -90,12 +90,12 @@
 
             <input
                 class="peer outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3 w-20"
-                type="number" value="1" placeholder="Số người" name="person_count">
+                type="number" value="{{ $person_count ?? 1 }}" placeholder="Số người" name="person_count">
         </label>
     </div>
 
-    <div class="rounded-xl overflow-hidden divide-x">
-        <button class="flex items-center px-5 h-10 bg-oYellow text-oWhite text-sm" type="submit">
+    <div class=" overflow-hidden divide-x">
+        <button class="flex items-center px-5 h-10 bg-oYellow text-oWhite text-sm rounded-xl" type="submit">
             <span class="material-symbols-outlined">
                 search
             </span>

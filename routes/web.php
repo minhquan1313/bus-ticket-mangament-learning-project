@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClientBookingController;
+use App\Http\Controllers\ClientHomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -15,15 +17,13 @@ use App\Http\Controllers\HomeController;
 */
 
 //Route::get('/', function () {
-    //return view('welcome');
+//return view('welcome');
 //});
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
  */
-Route::get('/', function () {
-    return view('client.home');
-})->name('home');
+Route::get('/', [ClientHomeController::class, 'index'])->name('home');
 
 Route::get('/1', function () {
     return view('client.auth.sign_in');
@@ -33,12 +33,12 @@ Route::get('/2', function () {
     return view('client.auth.sign_up');
 })->name('auth.sign_up');
 
-Route::get('/3', function () {
-    return view('client.booking.index');
-})->name('booking.index');
-Route::get('/4', function () {
+Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
+
+Route::get('/booking/detail', function () {
     return view('client.booking.detail');
 })->name('booking.detail');
+
 Route::get('/5', function () {
     return view('client.user.booked_ticket');
 })->name('user.booked');
@@ -50,7 +50,7 @@ Route::get('/7', function () {
 })->name('user.profile');
 
 
-Route::get('/check',[HomeController::class,'check']);
+Route::get('/check', [HomeController::class, 'check']);
 
 Route::get('/admin', function () {
     return view('admin.home');
@@ -59,7 +59,7 @@ Route::get('/user', function () {
     return view('user.home');
 })->name('user');
 //Route::get('/khachhang', function () {
-    //return view('khachhang');
+//return view('khachhang');
 //})->name('khachhang');
 
 

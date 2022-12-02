@@ -9,9 +9,12 @@
                 @include('client.booking_bar', ['subPos' => 'bottom'])
             </form>
         </div>
-
+        {{-- {{ date('Y-m-d H:i:s') }} --}}
+        {{-- @php
+            $d = new DateTime(date('Y-m-d H:i:s'));
+            echo $d->format('Y-m-d H:i:s');
+        @endphp --}}
         <p class="text-center text-2xl font-semibold">Các chuyến được tìm thấy</p>
-
         <div class="container space-y-6">
             <div class="bg-oBlack2 rounded-xl">
                 <ul class="grid grid-cols-4 gap-5 p-5">

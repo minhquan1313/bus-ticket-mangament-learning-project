@@ -1,9 +1,12 @@
 {
     "private": true,
     "scripts": {
+<<<<<<< HEAD
+=======
         "macos": "source ~/.bash_profile",
         "serve": "php artisan serve",
         "test": "npm run serve",
+>>>>>>> abdc8f3ab63bad56e08c6cb4f3527ae9904cb495
         "dev": "vite",
         "build": "vite build"
     },

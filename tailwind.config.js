@@ -12,9 +12,6 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-<<<<<<< HEAD
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-=======
                 sans: ["SVN-Poppins", ...defaultTheme.fontFamily.sans],
             },
             colors: {
@@ -39,7 +36,6 @@ module.exports = {
             padding: {
                 DEFAULT: "1rem",
                 md: "1.25rem",
->>>>>>> abdc8f3ab63bad56e08c6cb4f3527ae9904cb495
             },
         },
     },

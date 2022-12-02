@@ -14,11 +14,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-<<<<<<< HEAD
 //Route::get('/', function () {
     //return view('welcome');
 //});
-=======
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
@@ -26,11 +24,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 Route::get('/', function () {
     return view('client.home');
 })->name('home');
->>>>>>> 8df0a7e71a7081136b8c5f2c47463f8d1e06f37b
 
-<<<<<<< HEAD
-Route::get('/',[HomeController::class,'check']);
-=======
 Route::get('/1', function () {
     return view('client.auth.sign_in');
 })->name('auth.sign_in');
@@ -56,7 +50,7 @@ Route::get('/7', function () {
 })->name('user.profile');
 
 
->>>>>>> abdc8f3ab63bad56e08c6cb4f3527ae9904cb495
+Route::get('/check',[HomeController::class,'check']);
 
 Route::get('/admin', function () {
     return view('admin.home');
@@ -64,9 +58,9 @@ Route::get('/admin', function () {
 Route::get('/user', function () {
     return view('user.home');
 })->name('user');
-Route::get('/khachhang', function () {
-    return view('khachhang');
-})->name('khachhang');
+//Route::get('/khachhang', function () {
+    //return view('khachhang');
+//})->name('khachhang');
 
 
 

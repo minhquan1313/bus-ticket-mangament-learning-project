@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientAuthController;
 use App\Http\Controllers\ClientBookingController;
 use App\Http\Controllers\ClientHomeController;
 use Illuminate\Support\Facades\Route;
@@ -29,9 +30,7 @@ Route::get('/1', function () {
     return view('client.auth.sign_in');
 })->name('auth.sign_in');
 
-Route::get('/2', function () {
-    return view('client.auth.sign_up');
-})->name('auth.sign_up');
+Route::get('/signUp', [ClientAuthController::class, 'signUpGet'])->name('auth.sign_up');
 
 Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
 Route::get('/booking/detail', [ClientBookingController::class, 'detail'])->name('booking.detail');

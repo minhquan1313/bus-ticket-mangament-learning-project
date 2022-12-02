@@ -17,7 +17,7 @@
 
         <ul class="py-1">
             <li class="">
-                <a href="#"
+                <a href="{{ route('auth.sign_up') }}"
                     class="px-2 py-1 block text-right text-sm text-oLightGray hover:bg-oYellow hover:text-oWhite transition">
                     Đăng nhập
                 </a>

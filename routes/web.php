@@ -14,9 +14,19 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+<<<<<<< HEAD
 //Route::get('/', function () {
     //return view('welcome');
 //});
+=======
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+/**
+ * Client routes
+ */
+Route::get('/', function () {
+    return view('client.home');
+})->name('home');
+>>>>>>> 8df0a7e71a7081136b8c5f2c47463f8d1e06f37b
 
 <<<<<<< HEAD
 Route::get('/',[HomeController::class,'check']);

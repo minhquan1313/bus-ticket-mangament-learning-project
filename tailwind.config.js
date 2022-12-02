@@ -1,25 +1,21 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
-
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 module.exports = {
     content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
     ],
+
     theme: {
         extend: {
             fontFamily: {
-                sans: ["SVN-Poppins", ...defaultTheme.fontFamily.sans],
-            },
-        },
-        container: {
-            padding: {
-                DEFAULT: "1rem",
-                md: "1.25rem",
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
     },
-    plugins: [],
+
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

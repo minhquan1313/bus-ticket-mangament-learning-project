@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/**
- * Client routes
- */
-Route::get('/', function () {
-    return view('client.home');
-})->name('home');
+//Route::get('/', function () {
+    //return view('welcome');
+//});
 
+Route::get('/',[HomeController::class,'check']);
 
-/**
- * Admin routes
- */
 Route::get('/admin', function () {
     return view('admin.home');
-})->name('admin.home');
+})->name('admin');
+Route::get('/user', function () {
+    return view('user.home');
+})->name('user');
+Route::get('/khachhang', function () {
+    return view('khachhang');
+})->name('khachhang');
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

@@ -34,10 +34,8 @@ Route::get('/2', function () {
 })->name('auth.sign_up');
 
 Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
-
-Route::get('/booking/detail', function () {
-    return view('client.booking.detail');
-})->name('booking.detail');
+Route::get('/booking/detail', [ClientBookingController::class, 'detail'])->name('booking.detail');
+Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create');
 
 Route::get('/5', function () {
     return view('client.user.booked_ticket');

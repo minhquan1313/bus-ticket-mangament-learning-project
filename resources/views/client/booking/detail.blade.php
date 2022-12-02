@@ -1,6 +1,11 @@
 @extends('layout.client')
 @section('title', 'Thông tin vé xe')
 
+@section('master_head')
+    @parent
+    @vite('resources/js/booking.detail.js')
+@endsection
+
 @section('body')
     <div class="space-y-6 py-6">
 
@@ -12,63 +17,71 @@
                     <div class="flex gap-5 p-8">
                         {{-- cover --}}
                         <div class="w-1/3 flex-shrink-0 overflow-hidden pr-8 -mt-14">
-                            <img src="/images/bus.jpg" alt="Img" class="w-full aspect-[13/17] rounded-xl object-cover">
+                            <img src="{{ $xe->hinh_anh }}" alt="Img"
+                                class="w-full aspect-[13/17] rounded-xl object-cover">
                         </div>
 
                         {{-- info --}}
                         <div class="space-y-2">
                             <div class="text-xl flex items-center gap-3">
-                                <b>Thành Phố Hồ Chí Minh</b>
+                                <b>{{ $tinhFrom->ten_tinh }}</b>
                                 <span class="material-symbols-outlined">
                                     east
                                 </span>
-                                <b>Tỉnh Thừa Thiên Huế</b>
+                                <b>{{ $tinhTo->ten_tinh }}</b>
                             </div>
 
                             <p class="">Loại xe:
-                                <span class="font-bold"> Vip </span>
+                                <span class="font-bold"> {{ $xe->loai }} </span>
                             </p>
 
-                            <div class="space-y-2">
-                                <p>
-                                    Tiện ích:
-                                </p>
-                                <ul class="mx-4 space-y-2">
-                                    <li>
-                                        @include('client.booking.service_wifi')
-                                    </li>
-                                    <li>
-                                        @include('client.booking.service_bed')
-                                    </li>
-                                </ul>
-                            </div>
+                            @if ($xe->loai == 'VIP')
+                                <div class="space-y-2">
+                                    <p>
+                                        Tiện ích:
+                                    </p>
+                                    <ul class="mx-4 space-y-2">
+                                        @if ($xe->wifi)
+                                            <li>
+                                                @include('client.booking.service_wifi')
+                                            </li>
+                                        @endif
+
+                                        @if ($xe->bed)
+                                            <li>
+                                                @include('client.booking.service_bed')
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            @endif
 
                             <p class="">Biển số:
-                                <span class="font-bold"> 51N-5054 </span>
+                                <span class="font-bold"> {{ $xe->bien_so }} </span>
                             </p>
 
                             <p class="">Số chỗ ngồi:
-                                <span class="font-bold"> 39</span>
+                                <span class="font-bold"> {{ $xe->cho_ngoi }}</span>
                             </p>
 
                             <p class="">Ngày khởi hành:
-                                <span class="font-bold"> 06, tháng 1, năm 2017</span>
+                                <span class="font-bold"> {{ $khoiHanh }}</span>
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-span-2 bg-oBlack2 rounded-xl p-2 space-y-3">
+                <div class="col-span-2 bg-oBlack2 rounded-xl p-2 space-y-3 h-fit">
                     <p class="text-center text-2xl font-semibold">Chọn khung giờ</p>
 
                     <ul class="grid grid-cols-10 rounded-xl bg-oBlack1 border border-oBlack">
-                        @foreach ([1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] as $r)
+                        @foreach (['07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'] as $r)
                             <li class="select-none">
                                 <label>
-                                    <input type="radio" name="time" class="hidden peer" value="13:30">
+                                    <input type="radio" name="hour" class="hidden peer" value="{{ $r }}">
                                     <div
                                         class="flex items-center justify-center rounded-xl py-2 px-4 transition duration-300 hover:bg-oYellow peer-checked:bg-oYellow peer-checked:brightness-90">
-                                        13:30
+                                        {{ $r }}
                                     </div>
                                 </label>
                             </li>
@@ -76,7 +89,11 @@
                     </ul>
                 </div>
 
-                <form action="javascript:;" method="POST" class="bg-oBlack2 rounded-xl">
+                <form action="{{ route('booking.create') }}" method="POST" class="bg-oBlack2 rounded-xl">
+                    @csrf
+                    <input type="text" class="hidden" name="from" readonly value="{{ $tinhFrom->tinh_id }}">
+                    <input type="text" class="hidden" name="to" readonly value="{{ $tinhTo->tinh_id }}">
+                    <input type="text" class="hidden" name="xeId" readonly value="{{ $xe->xe_id }}">
                     <div class="p-2 px-4 space-y-3">
 
                         <p class="text-center text-2xl font-semibold">Tóm tắt</p>
@@ -96,13 +113,14 @@
 
                             <li>
                                 <p>Thời gian khởi hành:
-                                    <span class="font-bold"> DATE() </span>
+                                    <input type="text" name="time" readonly class="font-bold bg-transparent p-0"
+                                        value="{{ $khoiHanh }}">
                                 </p>
                             </li>
 
                             <li>
                                 <p>Loại xe:
-                                    <span class="font-bold"> Thường/Vip </span>
+                                    <span class="font-bold"> {{ $xe->loai }} </span>
                                 </p>
                             </li>
                         </ul>
@@ -112,7 +130,8 @@
                     </div>
 
                     <button type="submit"
-                        class="flex items-center justify-center rounded-b-xl px-5 h-10 bg-oYellow text-oWhite w-full">
+                        class="flex items-center justify-center rounded-b-xl px-5 h-10 bg-oYellow text-oWhite w-full"
+                        disabled>
                         Đặt ngay
                     </button>
                 </form>

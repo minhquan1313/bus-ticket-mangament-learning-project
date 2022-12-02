@@ -47,7 +47,7 @@
     @endif
 
     <a href="{{ $href ?? '#' }}" class="w-1/2 flex-shrink-0 overflow-hidden rounded-l-xl">
-        <img src="/images/bus.jpg" alt="Img" class="w-full aspect-[13/17] object-cover">
+        <img src="{{ $cvx->xe->hinh_anh }}" alt="Img" class="w-full aspect-[13/17] object-cover">
     </a>
 
     <div class="flex flex-col text-oWhite">

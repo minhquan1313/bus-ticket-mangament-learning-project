@@ -75,7 +75,6 @@ INSERT INTO `chuyen` (`chuyen_id`, `from_id`, `to_id`) VALUES
 CREATE TABLE `xe` (
   `xe_id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `bien_so` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `hinh_anh` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `cho_ngoi` int(10) NOT NULL,
   `loai` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `gia_tien` int(10) NOT NULL,
@@ -87,14 +86,14 @@ CREATE TABLE `xe` (
 -- Dumping data for table `xe`
 --
 
-INSERT INTO `xe` (`xe_id`, `bien_so`, `hinh_anh`, `cho_ngoi`, `loai`, `gia_tien`, `wifi`, `bed`) VALUES
-(1, '59N-5051', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
-(2, '59N-5052', '/images/bus.jpg', 39, 'Thường', 60000, 0, 0),
-(3, '59N-5053', '/images/bus.jpg', 39, 'Thường', 60000, 1, 0),
-(4, '59N-5054', '/images/bus.jpg', 39, 'Thường', 60000, 0, 1),
-(5, '59N-5055', '/images/bus.jpg', 39, 'Thường', 7000, 0, 0),
-(6, '59N-5056', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
-(7, '59N-5057', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1);
+INSERT INTO `xe` (`xe_id`, `bien_so`, `cho_ngoi`, `loai`, `gia_tien`, `wifi`, `bed`) VALUES
+(1, '59N-5051', 39, 'VIP', 120000, 1, 1),
+(2, '59N-5052', 39, 'Thường', 60000, 0, 0),
+(3, '59N-5053', 39, 'Thường', 60000, 1, 0),
+(4, '59N-5054', 39, 'Thường', 60000, 0, 1),
+(5, '59N-5055', 39, 'Thường', 7000, 0, 0),
+(6, '59N-5056', 39, 'VIP', 120000, 1, 1),
+(7, '59N-5057', 39, 'VIP', 120000, 1, 1);
 
 -- --------------------------------------------------------
 

@@ -10,6 +10,6 @@
 
 @section('master_body')
     <div id="main">
-        ...
+        Đây là admin
     </div>
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+    //return view('welcome');
+//});
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
@@ -46,10 +50,26 @@ Route::get('/7', function () {
 })->name('user.profile');
 
 
+Route::get('/check',[HomeController::class,'check']);
 
-/**
- * Admin routes
- */
 Route::get('/admin', function () {
     return view('admin.home');
-})->name('admin.home');
+})->name('admin');
+Route::get('/user', function () {
+    return view('user.home');
+})->name('user');
+//Route::get('/khachhang', function () {
+    //return view('khachhang');
+//})->name('khachhang');
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

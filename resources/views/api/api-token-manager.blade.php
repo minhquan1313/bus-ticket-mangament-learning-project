@@ -1,4 +1,5 @@
-<div>
+
+.<div>
     <!-- Generate API Token -->
     <x-jet-form-section submit="createApiToken">
         <x-slot name="title">

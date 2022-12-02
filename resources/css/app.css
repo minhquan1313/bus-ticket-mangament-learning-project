@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
+=======
+
+button:disabled {
+    @apply grayscale transition duration-300;
+}
+>>>>>>> abdc8f3ab63bad56e08c6cb4f3527ae9904cb495

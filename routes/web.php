@@ -18,7 +18,35 @@ use App\Http\Controllers\HomeController;
     //return view('welcome');
 //});
 
+<<<<<<< HEAD
 Route::get('/',[HomeController::class,'check']);
+=======
+Route::get('/1', function () {
+    return view('client.auth.sign_in');
+})->name('auth.sign_in');
+
+Route::get('/2', function () {
+    return view('client.auth.sign_up');
+})->name('auth.sign_up');
+
+Route::get('/3', function () {
+    return view('client.booking.index');
+})->name('booking.index');
+Route::get('/4', function () {
+    return view('client.booking.detail');
+})->name('booking.detail');
+Route::get('/5', function () {
+    return view('client.user.booked_ticket');
+})->name('user.booked');
+Route::get('/6', function () {
+    return view('client.user.booked_ticket_detail');
+})->name('user.booked_detail');
+Route::get('/7', function () {
+    return view('client.user.profile');
+})->name('user.profile');
+
+
+>>>>>>> abdc8f3ab63bad56e08c6cb4f3527ae9904cb495
 
 Route::get('/admin', function () {
     return view('admin.home');

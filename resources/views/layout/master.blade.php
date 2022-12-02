@@ -9,11 +9,21 @@
     <title>@yield('master_title')</title>
 
     @vite('resources/css/app.css')
-    <!-- Fonts -->
+
+    <!-- Fonts SVN Poppins -->
     @vite('resources/css/fonts/SVNPoppins/stylesheet.css')
+
+    <!-- Fonts Material icons -->
+    @vite('resources/css/fonts/materialIcon.css')
+
+    @yield('master_head')
 </head>
 
-<body>
+<body @hasSection('master_body_class')
+    class="@yield('master_body_class')"
+    @endif
+    >
+
     @yield('master_body')
 </body>
 

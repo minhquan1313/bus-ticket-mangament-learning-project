@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class ClientAuthController extends Controller
 {
-    //
+    public function getUniqueFileName($name)
+    {
+        return Str::beforeLast($name, '.') . date('_Ymd_his') . '.' . Str::afterLast($name, '.');
+    }
+
     public function signUpGet()
     {
         if (Auth::user()) return redirect()->route('home');
@@ -39,13 +44,11 @@ class ClientAuthController extends Controller
         $user = Auth::user();
         return view('client.user.profile', compact('user'));
     }
+
     use PasswordValidationRules;
     public function profilePost(Request $req)
     {
         $user = Auth::user();
-        // $toCheck = [];
-
-        // dd(var_dump($req->input));
 
         $input = [
             'surname' => $req->surname,
@@ -82,6 +85,28 @@ class ClientAuthController extends Controller
 
             $user->password = Hash::make($req->new_password);
         }
+
+
+        if ($req->profile_photo_path) {
+            $filename = $req->profile_photo_path->getClientOriginalName();
+            $oldImg = public_path($user->profile_photo_path);
+
+            $path = 'images/' . $user->id . '/';
+            $defaultAvatar = '/images/avatar.jpg';
+
+            if (file_exists(public_path($path . $filename))) {
+                $filename = $this->getUniqueFileName($filename);
+            }
+
+            $req->profile_photo_path->move($path, $filename);
+            if ($oldImg != $defaultAvatar) {
+                if (file_exists($oldImg)) {
+                    unlink($oldImg);
+                }
+            }
+            $user->profile_photo_path = '/images/' . $filename;
+        }
+
         $user->save();
 
         return redirect()->route('user.profile');

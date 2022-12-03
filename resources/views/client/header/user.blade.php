@@ -10,7 +10,8 @@
         </span>
         @if ($user)
             <p class="whitespace-nowrap text-sm">{{ $user->surname . ' ' . $user->name }}</p>
-            <img src="{{ $user->profile_photo_path }}" alt="" class="h-6 w-auto rounded-full object-cover">
+            <img src="{{ $user->profile_photo_path }}" alt=""
+                class="h-6 w-auto aspect-square rounded-full object-cover">
         @else
             <span class="material-symbols-outlined">
                 account_circle

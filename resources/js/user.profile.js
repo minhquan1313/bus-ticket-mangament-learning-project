@@ -10,6 +10,23 @@
     const oldPasswordInp = document.querySelector("input[name=old_password]");
     const saveChangePasswordBtn = document.querySelector("#saveChangePass");
 
+    const imgToChange = document.querySelector("#img_to_change");
+    const fileInp = document.querySelector("input[name=profile_photo_path]");
+
+    fileInp?.addEventListener("input", () => {
+        const [file] = fileInp.files;
+
+        console.log(fileInp.value);
+        console.log(file);
+
+        if (!file) return;
+
+        imgToChange.src = URL.createObjectURL(file);
+        imgToChange.classList.remove("scale-0");
+
+        saveChangeNameBtn.disabled = false;
+    });
+
     if (
         !(
             surnameInp &&

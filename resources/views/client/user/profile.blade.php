@@ -33,13 +33,26 @@
             <div class="flex-1">
                 <div>
                     <input type="radio" name="tab" class="hidden peer" id="profile" checked>
-                    <form action="{{ route('user.profile') }}" method="POST"
+                    <form action="{{ route('user.profile') }}" enctype="multipart/form-data" method="POST"
                         class="hidden flex-col p-5 peer-checked:flex peer-checked:min-h-[30rem]">
                         @csrf
                         <div class="flex flex-1 gap-5">
-                            <div class="w-24 space-y-2">
-                                <img src="/images/avatar.jpg" alt="Avatar"
-                                    class="block w-full aspect-square rounded-full border border-oBlack1">
+                            <div class="relative w-24 space-y-2">
+                                <div class="group relative w-full aspect-square rounded-full">
+                                    <div class="relative w-full aspect-square rounded-full overflow-hidden">
+                                        <img src="{{ $user->profile_photo_path }}" alt="Avatar"
+                                            class="scale-100 block w-full aspect-square rounded-full border border-oBlack1 object-cover">
+                                        <label
+                                            class="absolute inset-x-0 bg-oBlack/50 text-center text-xs pb-2 pt-1 cursor-pointer transition-all -bottom-10 group-hover:bottom-0">
+                                            Chọn ảnh
+                                            <input type="file" accept="image/*" name="profile_photo_path" class="hidden">
+                                        </label>
+                                    </div>
+
+                                    <img id="img_to_change" src="{{ $user->profile_photo_path }}" alt=""
+                                        class="absolute right-0 top-0 w-1/2 aspect-square rounded-full border border-oBlack1 scale-0  object-cover transition duration-300">
+
+                                </div>
                                 <p class="text-sm">ID: <span class="font-semibold"> {{ $user->id }} </span></p>
                             </div>
 

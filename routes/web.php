@@ -21,7 +21,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
  */
-Route::get('/', [ClientHomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/', [ClientHomeController::class, 'index'])->name('home');
 
 Route::get('/signIn', [ClientAuthController::class, 'signInGet'])->name('auth.sign_in');
 

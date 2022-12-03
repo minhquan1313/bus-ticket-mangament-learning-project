@@ -9,10 +9,7 @@
             menu
         </span>
         @if ($user)
-            {{-- <span class="material-symbols-outlined">
-            account_circle
-        </span> --}}
-            <p class="whitespace-nowrap">{{ $user->surname . ' ' . $user->name }}</p>
+            <p class="whitespace-nowrap text-sm">{{ $user->surname . ' ' . $user->name }}</p>
             <img src="{{ $user->profile_photo_path }}" alt="" class="h-6 w-auto rounded-full object-cover">
         @else
             <span class="material-symbols-outlined">

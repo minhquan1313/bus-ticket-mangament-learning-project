@@ -43,6 +43,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
+        // dd('yeah');
         $this->reportable(function (Throwable $e) {
             //
         });

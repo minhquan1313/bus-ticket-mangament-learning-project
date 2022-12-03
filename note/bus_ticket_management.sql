@@ -51,20 +51,23 @@ INSERT INTO `tinh` (`tinh_id`, `ten_tinh`) VALUES
 CREATE TABLE `chuyen` (
   `chuyen_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL PRIMARY KEY,
   `from_id` int(10) NOT NULL,
-  `to_id` int(10) NOT NULL
+  `to_id` int(10) NOT NULL,
+  `xe_id` int(10) NOT NULL,
+  `thoi_gian_khoi_hanh` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `do_dai` int(10) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `chuyen`
 --
 
-INSERT INTO `chuyen` (`chuyen_id`, `from_id`, `to_id`) VALUES
-('1-2', 1, 2),
-('1-3', 1, 3),
-('1-4', 1, 4),
-('2-3', 2, 3),
-('2-4', 2, 4),
-('3-4', 3, 4);
+INSERT INTO `chuyen` (`chuyen_id`, `from_id`, `to_id`, `xe_id`, `thoi_gian_khoi_hanh`, `do_dai`) VALUES
+(1, 1, 2, 1, '2022-12-02 00:00:00', '308000'),
+(2, 1, 3, 2, '2023-12-02 00:00:00', '308000'),
+(3, 1, 4, 1, '2022-06-02 00:00:00', '308000'),
+(4, 2, 3, 3, '2022-06-02 00:00:00', '308000'),
+(5, 2, 4, 2, '2022-06-02 00:00:00', '308000'),
+(6, 3, 4, 2, '2022-07-02 00:00:00', '308000');
 
 -- --------------------------------------------------------
 
@@ -89,102 +92,12 @@ CREATE TABLE `xe` (
 
 INSERT INTO `xe` (`xe_id`, `bien_so`, `hinh_anh`, `cho_ngoi`, `loai`, `gia_tien`, `wifi`, `bed`) VALUES
 (1, '59N-5051', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
-(2, '59N-5052', '/images/bus.jpg', 39, 'Thường', 60000, 0, 0),
-(3, '59N-5053', '/images/bus.jpg', 39, 'Thường', 60000, 1, 0),
-(4, '59N-5054', '/images/bus.jpg', 39, 'Thường', 60000, 0, 1),
-(5, '59N-5055', '/images/bus.jpg', 39, 'Thường', 7000, 0, 0),
-(6, '59N-5056', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
-(7, '59N-5057', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chuyen_va_xe`
---
-
-CREATE TABLE `chuyen_va_xe` (
-  `chuyen_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `xe_id` int(10) NOT NULL,
-  `thoi_gian_khoi_hanh` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `do_dai` int(10) NOT NULL,
-   PRIMARY KEY (`chuyen_id`, `xe_id`, `thoi_gian_khoi_hanh`)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `chuyen_va_xe`
---
-
-INSERT INTO `chuyen_va_xe` (`chuyen_id`, `xe_id`, `thoi_gian_khoi_hanh`, `do_dai`) VALUES
-('1-2', 1, '2022-12-02 7:00:00', '308000'),
-('1-2', 1, '2022-12-02 7:30:00', '308000'),
-('1-2', 1, '2022-12-02 8:00:00', '308000'),
-('1-2', 1, '2022-12-02 8:30:00', '308000'),
-('1-2', 1, '2022-12-02 9:00:00', '308000'),
-('1-2', 1, '2022-12-02 9:30:00', '308000'),
-('1-2', 1, '2022-12-02 10:00:00', '308000'),
-('1-2', 1, '2022-12-02 10:30:00', '308000'),
-('1-2', 1, '2022-12-02 11:00:00', '308000'),
-('1-2', 1, '2022-12-02 11:30:00', '308000'),
-('1-2', 1, '2022-12-02 13:00:00', '308000'),
-('1-2', 1, '2022-12-02 13:30:00', '308000'),
-('1-2', 1, '2022-12-02 14:00:00', '308000'),
-('1-2', 1, '2022-12-02 14:30:00', '308000'),
-('1-2', 1, '2022-12-02 15:00:00', '308000'),
-('1-2', 1, '2022-12-02 15:30:00', '308000'),
-('1-2', 1, '2022-12-02 16:00:00', '308000'),
-('1-2', 1, '2022-12-02 16:30:00', '308000'),
-('1-2', 1, '2022-12-02 17:00:00', '308000'),
-('1-2', 1, '2022-12-02 17:30:00', '308000'),
-('1-2', 1, '2022-12-02 18:00:00', '308000'),
-('1-2', 1, '2022-12-02 18:30:00', '308000'),
-('1-2', 2, '2022-12-02 7:00:00', '308000'),
-('1-2', 2, '2022-12-02 7:30:00', '308000'),
-('1-2', 2, '2022-12-02 8:00:00', '308000'),
-('1-2', 2, '2022-12-02 8:30:00', '308000'),
-('1-2', 2, '2022-12-02 9:00:00', '308000'),
-('1-2', 2, '2022-12-02 9:30:00', '308000'),
-('1-2', 2, '2022-12-02 10:00:00', '308000'),
-('1-2', 2, '2022-12-02 10:30:00', '308000'),
-('1-2', 2, '2022-12-02 11:00:00', '308000'),
-('1-2', 2, '2022-12-02 11:30:00', '308000'),
-('1-2', 2, '2022-12-02 13:00:00', '308000'),
-('1-2', 2, '2022-12-02 13:30:00', '308000'),
-('1-2', 2, '2022-12-02 14:00:00', '308000'),
-('1-2', 2, '2022-12-02 14:30:00', '308000'),
-('1-2', 2, '2022-12-02 15:00:00', '308000'),
-('1-2', 2, '2022-12-02 15:30:00', '308000'),
-('1-2', 2, '2022-12-02 16:00:00', '308000'),
-('1-2', 2, '2022-12-02 16:30:00', '308000'),
-('1-2', 2, '2022-12-02 17:00:00', '308000'),
-('1-2', 2, '2022-12-02 17:30:00', '308000'),
-('1-2', 2, '2022-12-02 18:00:00', '308000'),
-('1-2', 2, '2022-12-02 18:30:00', '308000');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `khach_hang`
---
-
-CREATE TABLE `khach_hang` (
-  `khach_hang_id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `sdt` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `ho` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `ten_dem` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `ten` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `mat_khau` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `khach_hang`
---
-
-INSERT INTO `khach_hang` (`khach_hang_id`, `sdt`, `ho`, `ten_dem`, `ten`, `mat_khau`) VALUES
-(1, '0123456789', 'Nguyen', 'Van', 'A', '1'),
-(2, '0123456788', 'Nguyen', 'Van', 'B', '1'),
-(3, '0123456787', 'Nguyen', 'Van', 'C', '1'),
-(4, '0123456786', 'Nguyen', 'Van', 'D', '1'),
-(5, '0123456785', 'Nguyen', 'Van', 'E', '1');
+(2, '59N-5052', '/images/bus2.jpg', 39, 'Thường', 60000, 0, 0),
+(3, '59N-5053', '/images/bus3.jpg', 39, 'VIP', 70000, 1, 0),
+(4, '59N-5054', '/images/bus.jpg', 39, 'VIP', 90000, 0, 1),
+(5, '59N-5055', '/images/bus2.jpg', 39, 'Thường', 7000, 0, 0),
+(6, '59N-5056', '/images/bus3.jpg', 39, 'VIP', 120000, 1, 1),
+(7, '59N-5057', '/images/bus.jpg', 39, 'VIP', 50000, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -217,22 +130,23 @@ CREATE TABLE `ve_xe` (
   `ve_xe_id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `khach_hang_id` int(10) NOT NULL,
   `chuyen_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `xe_id` int(10) NOT NULL,
-  `thoi_gian_khoi_hanh` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `khoi_hanh_gio` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
   `so_nguoi` int(10) NOT NULL,
-  `trang_thai_id` int(10) NOT NULL
+  `trang_thai_id` int(10) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ve_xe`
 --
 
-INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `xe_id`, `thoi_gian_khoi_hanh`, `so_nguoi`, `trang_thai_id`) VALUES
-(1, 1, '1-2', 1, '2022-12-02 9:00:00', 2, 1),
-(2, 1, '1-2', 1, '2022-12-02 9:00:00', 2, 4),
-(3, 1, '1-2', 2, '2022-12-02 13:00:00', 1, 1),
-(4, 3, '1-2', 2, '2022-12-02 15:30:00', 2, 1),
-(5, 2, '1-2', 1, '2022-12-02 16:30:00', 1, 1);
+INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `khoi_hanh_gio`, `so_nguoi`, `trang_thai_id`,`created_at`,`updated_at`) VALUES
+(1, 1, 1, '13:00', 2, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(2, 1, 3, '14:00', 2, 4, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(3, 1, 5, '15:00', 1, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(4, 3, 4, '16:00', 2, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(5, 2, 3, '17:00', 1, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33');
 
 --
 -- AUTO_INCREMENT for dumped tables

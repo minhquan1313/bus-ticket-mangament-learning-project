@@ -9,31 +9,16 @@
 
         <div class="container space-y-6">
             <div class="bg-oBlack2 rounded-xl">
-                <ul class="grid grid-cols-4 gap-5 p-5">
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'cancled',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
+                <ul class="grid grid-cols-2 xl:grid-cols-4 gap-5 p-5">
+                    @foreach ($chuyen as $cvx)
+                        <li>
+                            @include('client.booking.ticket_card', [
+                                'type' => $cvx->trang_thai,
+                                'href' => route('user.booked_detail', ['ve_id' => $cvx->ve_id]),
+                                'cvx' => $cvx,
+                            ])
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

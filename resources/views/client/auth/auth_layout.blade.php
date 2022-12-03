@@ -5,7 +5,7 @@
 @section('master_head')
     @parent
     @vite('resources/js/passwordToggler.js')
-    @vite('resources/js/auth.inputPassword.js')
+    @vite('resources/js/auth.layout.js')
 @endsection
 
 @section('body')

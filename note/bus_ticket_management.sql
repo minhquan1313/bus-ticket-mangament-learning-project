@@ -138,12 +138,12 @@ CREATE TABLE `ve_xe` (
 -- Dumping data for table `ve_xe`
 --
 
-INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `xe_id`, `thoi_gian_khoi_hanh`, `so_nguoi`, `trang_thai_id`) VALUES
-(1, 1, '1-2', 1, '2022-12-02 9:00:00', 2, 1),
-(2, 1, '1-2', 1, '2022-12-02 9:00:00', 2, 4),
-(3, 1, '1-2', 2, '2022-12-02 13:00:00', 1, 1),
-(4, 3, '1-2', 2, '2022-12-02 15:30:00', 2, 1),
-(5, 2, '1-2', 1, '2022-12-02 16:30:00', 1, 1);
+INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `so_nguoi`, `trang_thai_id`) VALUES
+(1, 1, 1, 2, 1),
+(2, 1, 3, 2, 4),
+(3, 1, 5, 1, 1),
+(4, 3, 4, 2, 1),
+(5, 2, 3, 1, 1);
 
 --
 -- AUTO_INCREMENT for dumped tables

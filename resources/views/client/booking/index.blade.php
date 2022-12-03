@@ -29,7 +29,6 @@
                         @foreach ($chuyen_va_xe as $cvx)
                             <li>
                                 @include('client.booking.ticket_card', [
-                                    'type' => 'bookNow',
                                     'href' =>
                                         route('booking.detail', ['chuyen_id' => $cvx->chuyen_id]) .
                                         '?person_count=' .

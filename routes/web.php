@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientAuthController;
 use App\Http\Controllers\ClientBookingController;
 use App\Http\Controllers\ClientHomeController;
+use App\Http\Controllers\ClientUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -31,16 +32,15 @@ Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking
 Route::get('/booking/detail/{chuyen_id}', [ClientBookingController::class, 'detail'])->name('booking.detail');
 Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create');
 
-Route::get('/5', function () {
-    return view('client.user.booked_ticket');
-})->name('user.booked');
-Route::get('/6', function () {
-    return view('client.user.booked_ticket_detail');
-})->name('user.booked_detail');
 
 Route::get('/profile', [ClientAuthController::class, 'profileGet'])->name('user.profile');
 Route::post('/profile', [ClientAuthController::class, 'profilePost']);
 Route::post('/profile/logout', [ClientAuthController::class, 'logOut'])->name('user.logout');
+
+Route::get('/profile/booked', [ClientUserController::class, 'booked'])->name('user.booked');
+Route::get('/profile/booked/{chuyen_id}', function () {
+    return view('client.user.booked_ticket_detail');
+})->name('user.booked_detail');
 
 
 /**

@@ -130,8 +130,6 @@ CREATE TABLE `ve_xe` (
   `ve_xe_id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `khach_hang_id` int(10) NOT NULL,
   `chuyen_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `xe_id` int(10) NOT NULL,
-  `thoi_gian_khoi_hanh` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `so_nguoi` int(10) NOT NULL,
   `trang_thai_id` int(10) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

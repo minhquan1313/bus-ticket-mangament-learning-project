@@ -30,7 +30,10 @@
                             <li>
                                 @include('client.booking.ticket_card', [
                                     'type' => 'bookNow',
-                                    'href' => route('booking.detail', ['chuyen_id' => $cvx->chuyen_id]),
+                                    'href' =>
+                                        route('booking.detail', ['chuyen_id' => $cvx->chuyen_id]) .
+                                        '?person_count=' .
+                                        $_GET['person_count'],
                                     'cvx' => $cvx,
                                 ])
                             </li>

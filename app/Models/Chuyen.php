@@ -12,6 +12,6 @@ class Chuyen extends Model
     public $timestamps = true;
     protected
         $fillable = [
-            'chuyen_id', 'from_id', 'to_id'
+            'chuyen_id', 'from_id', 'to_id', 'xe_id', 'thoi_gian_khoi_hanh', 'do_dai'
         ];
 }

@@ -58,6 +58,5 @@ class ClientBookingController extends Controller
     public function create(Request $req)
     {
         return  $req;
-        # code...
     }
 }

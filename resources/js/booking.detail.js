@@ -1,8 +1,6 @@
 (() => {
-    console.log("hi");
-
     let radio = document.querySelectorAll("input[name=hour]");
-    let btn = document.querySelector("button[type=submit]");
+    let btn = document.querySelector("button#bookNow");
     let timeInp = document.querySelector("input[name=time]");
     const initTime = timeInp.value;
 

@@ -33,6 +33,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('user.booked') }}"
+                        class="px-2 py-1 block text-right text-sm text-oLightGray hover:bg-oYellow hover:text-oWhite transition">
+                        Vé đã đặt
+                    </a>
+                </li>
+                <li>
                     <form action="{{ route('user.logout') }}" method="post" class="block ">
                         @csrf
                         <button type="submit"

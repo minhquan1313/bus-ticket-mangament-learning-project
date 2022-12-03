@@ -123,14 +123,20 @@
                                     <span class="font-bold"> {{ $xe->loai }} </span>
                                 </p>
                             </li>
+                            <li>
+                                <p>Số người:
+                                    <span class="font-bold"> {{ $_GET['person_count'] }} </span>
+                                </p>
+                            </li>
                         </ul>
 
                         <p class="text-right text-2xl font-semibold">Giá</p>
                         <p class="text-right text-2xl font-semibold text-oYellow">
-                            {{ $xe->gia_tien + round(($chuyen->do_dai * 0.3) / 1000) * 1000 }} đ</p>
+                            {{ $xe->gia_tien + round(($chuyen->do_dai * 0.3) / 1000) * 1000 * $_GET['person_count'] }} đ
+                        </p>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" id="bookNow"
                         class="flex items-center justify-center rounded-b-xl px-5 h-10 bg-oYellow text-oWhite w-full"
                         disabled>
                         Đặt ngay

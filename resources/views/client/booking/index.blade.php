@@ -30,14 +30,7 @@
                             <li>
                                 @include('client.booking.ticket_card', [
                                     'type' => 'bookNow',
-                                    'href' =>
-                                        route('booking.detail') .
-                                        '?chuyen_id=' .
-                                        $cvx->chuyen_id .
-                                        '&xe_id=' .
-                                        $cvx->xe_id .
-                                        '&thoi_gian_khoi_hanh=' .
-                                        $cvx->thoi_gian_khoi_hanh,
+                                    'href' => route('booking.detail', ['chuyen_id' => $cvx->chuyen_id]),
                                     'cvx' => $cvx,
                                 ])
                             </li>

@@ -28,7 +28,7 @@ Route::get('/signIn', [ClientAuthController::class, 'signInGet'])->name('auth.si
 Route::get('/signUp', [ClientAuthController::class, 'signUpGet'])->name('auth.sign_up');
 
 Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
-Route::get('/booking/detail', [ClientBookingController::class, 'detail'])->name('booking.detail');
+Route::get('/booking/detail/{chuyen_id}', [ClientBookingController::class, 'detail'])->name('booking.detail');
 Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create');
 
 Route::get('/5', function () {
@@ -37,9 +37,10 @@ Route::get('/5', function () {
 Route::get('/6', function () {
     return view('client.user.booked_ticket_detail');
 })->name('user.booked_detail');
-Route::get('/7', function () {
-    return view('client.user.profile');
-})->name('user.profile');
+
+Route::get('/profile', [ClientAuthController::class, 'profileGet'])->name('user.profile');
+Route::post('/profile', [ClientAuthController::class, 'profilePost']);
+Route::post('/profile/logout', [ClientAuthController::class, 'logOut'])->name('user.logout');
 
 
 /**

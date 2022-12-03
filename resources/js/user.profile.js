@@ -1,13 +1,13 @@
 (() => {
     const surnameInp = document.querySelector("input[name=surname]");
-    const firstNameInp = document.querySelector("input[name=firstName]");
+    const firstNameInp = document.querySelector("input[name=name]");
     const saveChangeNameBtn = document.querySelector("#saveChangeName");
 
-    const newPasswordInp = document.querySelector("input[name=newPassword]");
+    const newPasswordInp = document.querySelector("input[name=new_password]");
     const newPasswordRepeatInp = document.querySelector(
-        "input[name=newPasswordRepeat]"
+        "input[name=new_password_confirmation]"
     );
-    const oldPasswordInp = document.querySelector("input[name=oldPassword]");
+    const oldPasswordInp = document.querySelector("input[name=old_password]");
     const saveChangePasswordBtn = document.querySelector("#saveChangePass");
 
     if (
@@ -19,8 +19,10 @@
             newPasswordInp &&
             oldPasswordInp
         )
-    )
+    ) {
+        console.log("return");
         return;
+    }
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     const onInput = function (value, initValue, btn) {
         btn.disabled = value.trim() === initValue.trim();
@@ -37,15 +39,15 @@
     };
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     passwordToggler(
-        document.querySelector("input[name=oldPassword]"),
+        document.querySelector("input[name=old_password]"),
         document.querySelector("#password_toggle1")
     );
     passwordToggler(
-        document.querySelector("input[name=newPassword]"),
+        document.querySelector("input[name=new_password]"),
         document.querySelector("#password_toggle2")
     );
     passwordToggler(
-        document.querySelector("input[name=newPasswordRepeat]"),
+        document.querySelector("input[name=new_password_confirmation]"),
         document.querySelector("#password_toggle3")
     );
 

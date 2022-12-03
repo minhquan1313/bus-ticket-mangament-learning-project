@@ -33,10 +33,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ '#' }}"
-                        class="px-2 py-1 block text-right text-sm text-oLightGray hover:bg-oYellow hover:text-oWhite transition">
-                        Đăng xuất
-                    </a>
+                    <form action="{{ route('user.logout') }}" method="post" class="block ">
+                        @csrf
+                        <button type="submit"
+                            class="w-full text-right px-2 py-1 text-sm text-oLightGray hover:bg-oYellow hover:text-oWhite transition">
+                            Đăng xuất
+                        </button>
+                    </form>
                 </li>
             @else
                 <li>

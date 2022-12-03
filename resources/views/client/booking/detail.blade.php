@@ -126,7 +126,8 @@
                         </ul>
 
                         <p class="text-right text-2xl font-semibold">Giá</p>
-                        <p class="text-right text-2xl font-semibold text-oYellow">120.000d</p>
+                        <p class="text-right text-2xl font-semibold text-oYellow">
+                            {{ $xe->gia_tien + round(($chuyen->do_dai * 0.3) / 1000) * 1000 }} đ</p>
                     </div>
 
                     <button type="submit"

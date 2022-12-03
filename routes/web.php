@@ -30,17 +30,14 @@ Route::get('/signUp', [ClientAuthController::class, 'signUpGet'])->name('auth.si
 
 Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
 Route::get('/booking/detail/{chuyen_id}', [ClientBookingController::class, 'detail'])->name('booking.detail');
-Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create');
+Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create')->middleware('auth');
 
+Route::get('/profile', [ClientAuthController::class, 'profileGet'])->name('user.profile')->middleware('auth');
+Route::post('/profile', [ClientAuthController::class, 'profilePost'])->middleware('auth');
+Route::post('/profile/logout', [ClientAuthController::class, 'logOut'])->name('user.logout')->middleware('auth');
 
-Route::get('/profile', [ClientAuthController::class, 'profileGet'])->name('user.profile');
-Route::post('/profile', [ClientAuthController::class, 'profilePost']);
-Route::post('/profile/logout', [ClientAuthController::class, 'logOut'])->name('user.logout');
-
-Route::get('/profile/booked', [ClientUserController::class, 'booked'])->name('user.booked');
-Route::get('/profile/booked/{chuyen_id}', function () {
-    return view('client.user.booked_ticket_detail');
-})->name('user.booked_detail');
+Route::get('/profile/booked', [ClientUserController::class, 'booked'])->name('user.booked')->middleware('auth');
+Route::get('/profile/booked/{ve_id}', [ClientUserController::class, 'bookedDetail'])->name('user.booked_detail')->middleware('auth');
 
 
 /**

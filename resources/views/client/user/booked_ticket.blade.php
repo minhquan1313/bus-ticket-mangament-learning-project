@@ -13,36 +13,12 @@
                     @foreach ($chuyen as $cvx)
                         <li>
                             @include('client.booking.ticket_card', [
-                                'type' => 'bookNow',
-                                'href' => route('user.booked_detail', ['chuyen_id' => $cvx->chuyen_id]),
+                                'type' => $cvx->trang_thai,
+                                'href' => route('user.booked_detail', ['ve_id' => $cvx->ve_id]),
                                 'cvx' => $cvx,
                             ])
                         </li>
                     @endforeach
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'cancled',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
-                    <li>
-                        @include('client.booking.ticket_card', [
-                            'type' => 'seeDetail',
-                            'href' => route('user.booked_detail'),
-                        ])
-                    </li>
                 </ul>
             </div>
         </div>

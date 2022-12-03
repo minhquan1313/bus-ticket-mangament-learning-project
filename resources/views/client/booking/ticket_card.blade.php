@@ -1,15 +1,20 @@
 @php
-    $title = 'Button';
+    $title = 'Đặt ngay';
     $colorClass = 'bg-oYellow';
 @endphp
 
 @isset($type)
     @php
-        
         $objTit = ['seeDetail' => ['t' => 'Xem chi tiết', 'c' => 'bg-oGreen'], 'cancled' => ['t' => 'Đã huỷ chuyến', 'c' => 'bg-oRed'], 'bookNow' => ['t' => 'Đặt ngay', 'c' => 'bg-oYellow']];
+        // $objTit = ['seeDetail' => ['t' => 'Xem chi tiết', 'c' => 'bg-oGreen'], 'cancled' => ['t' => 'Đã huỷ chuyến', 'c' => 'bg-oRed'], 'bookNow' => ['t' => 'Đặt ngay', 'c' => 'bg-oYellow']];
+        $objColor = ['bg-oGreen', 'bg-oBlack3', 'bg-oBlack3', 'bg-oRed'];
         
-        $title = $objTit[$type]['t'];
-        $colorClass = $objTit[$type]['c'];
+        // var_dump($objColor, $type);
+        // $title = $objTit[$type]['t'];
+        // $colorClass = $objTit[$type]['c'];
+        
+        $title = $type->ten;
+        $colorClass = $objColor[$type->trang_thai_id - 1];
     @endphp
 @endisset
 
@@ -50,7 +55,7 @@
         <img src="{{ $cvx->xe->hinh_anh }}" alt="Img" class="w-full aspect-[13/17] object-cover">
     </a>
 
-    <div class="flex flex-col text-oWhite">
+    <div class="flex flex-1 flex-col text-oWhite">
         <div class="m-2 space-y-0.5">
             <p class="text-sm">Từ:
                 <span class="font-bold"> {{ $cvx->from }} </span>

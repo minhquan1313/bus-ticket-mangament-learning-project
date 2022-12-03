@@ -130,20 +130,23 @@ CREATE TABLE `ve_xe` (
   `ve_xe_id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `khach_hang_id` int(10) NOT NULL,
   `chuyen_id`  varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `khoi_hanh_gio` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
   `so_nguoi` int(10) NOT NULL,
-  `trang_thai_id` int(10) NOT NULL
+  `trang_thai_id` int(10) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ve_xe`
 --
 
-INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `so_nguoi`, `trang_thai_id`) VALUES
-(1, 1, 1, 2, 1),
-(2, 1, 3, 2, 4),
-(3, 1, 5, 1, 1),
-(4, 3, 4, 2, 1),
-(5, 2, 3, 1, 1);
+INSERT INTO `ve_xe` (`ve_xe_id`, `khach_hang_id`, `chuyen_id`, `khoi_hanh_gio`, `so_nguoi`, `trang_thai_id`,`created_at`,`updated_at`) VALUES
+(1, 1, 1, '13:00', 2, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(2, 1, 3, '14:00', 2, 4, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(3, 1, 5, '15:00', 1, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(4, 3, 4, '16:00', 2, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33'),
+(5, 2, 3, '17:00', 1, 1, '2022-12-05 13:04:33', '2022-12-05 13:04:33');
 
 --
 -- AUTO_INCREMENT for dumped tables

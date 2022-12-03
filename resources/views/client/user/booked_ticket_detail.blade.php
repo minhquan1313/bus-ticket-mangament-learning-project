@@ -18,49 +18,61 @@
                         {{-- info --}}
                         <div class="space-y-2">
                             <div class="text-xl flex items-center gap-3">
-                                <b>Thành Phố Hồ Chí Minh</b>
+                                <b>{{ $chuyen->from }}</b>
                                 <span class="material-symbols-outlined">
                                     east
                                 </span>
-                                <b>Tỉnh Thừa Thiên Huế</b>
+                                <b>{{ $chuyen->to }}</b>
                             </div>
 
-                            <p class="">Loại xe:
-                                <span class="font-bold"> Vip </span>
+                            <p>Loại xe:
+                                <span class="font-bold"> {{ $chuyen->xe->loai }} </span>
                             </p>
 
-                            <div class="space-y-2">
-                                <p>
-                                    Tiện ích:
-                                </p>
-                                <ul class="mx-4 space-y-2">
-                                    <li>
-                                        @include('client.booking.service_wifi')
-                                    </li>
-                                    <li>
-                                        @include('client.booking.service_bed')
-                                    </li>
-                                </ul>
-                            </div>
+                            @if ($chuyen->xe->loai == 'VIP')
+                                <div class="space-y-2">
+                                    <p>
+                                        Tiện ích:
+                                    </p>
+                                    <ul class="mx-4 space-y-2">
+                                        @if ($chuyen->xe->wifi)
+                                            <li>
+                                                @include('client.booking.service_wifi')
+                                            </li>
+                                        @endif
 
-                            <p class="">Biển số:
-                                <span class="font-bold"> 51N-5054 </span>
+                                        @if ($chuyen->xe->bed)
+                                            <li>
+                                                @include('client.booking.service_bed')
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <p>Biển số:
+                                <span class="font-bold"> {{ $chuyen->xe->bien_so }} </span>
                             </p>
 
-                            <p class="">Số chỗ ngồi:
-                                <span class="font-bold"> 39</span>
+                            <p>Số chỗ ngồi:
+                                <span class="font-bold"> {{ $chuyen->xe->cho_ngoi }}</span>
                             </p>
 
-                            <p class="">Ngày đặt vé:
-                                <span class="font-bold"> 16:30, 06, tháng 1, năm 2017 </span>
+                            <p>Ngày đặt vé:
+                                <span class="font-bold"> {{ date('d-m-Y H:i:s', strtotime($chuyen->ve_xe->created_at)) }}
+                                </span>
                             </p>
 
-                            <p class="">Ngày khởi hành:
-                                <span class="font-bold"> 16:30, 06, tháng 1, năm 2017 </span>
+                            <p>Ngày khởi hành:
+                                <span class="font-bold">
+                                    {{-- {{ $chuyen->ve_xe->khoi_hanh_gio }} --}}
+                                    {{-- {{ $chuyen->thoi_gian_khoi_hanh }} --}}
+                                    {{ date('d-m-Y H:i:s', strtotime(explode(' ', $chuyen->thoi_gian_khoi_hanh)[0] . ' ' . $chuyen->ve_xe->khoi_hanh_gio)) }}
+                                </span>
                             </p>
 
-                            <p class="">Trạng thái:
-                                <span class="font-bold"> Có thể dùng </span>
+                            <p>Trạng thái:
+                                <span class="font-bold"> {{ $chuyen->trang_thai->ten }} </span>
                             </p>
                         </div>
                     </div>
@@ -75,10 +87,12 @@
                         Quay lại
                     </a>
 
-                    <a href="{{ $href ?? '#' }}"
-                        class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oRed">
-                        Huỷ vé
-                    </a>
+                    @if ($chuyen->trang_thai->trang_thai_id == 1)
+                        <a href="{{ $href ?? '#' }}"
+                            class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oRed">
+                            Huỷ vé
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

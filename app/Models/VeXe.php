@@ -12,6 +12,6 @@ class VeXe extends Model
     public $timestamps = true;
     protected
         $fillable = [
-            've_xe_id', 'khach_hang_id', 'chuyen_id', 'so_nguoi', 'trang_thai_id'
+            've_xe_id', 'khach_hang_id', 'chuyen_id', 'khoi_hanh_gio', 'so_nguoi', 'trang_thai_id', 'created_at', 'updated_at'
         ];
 }

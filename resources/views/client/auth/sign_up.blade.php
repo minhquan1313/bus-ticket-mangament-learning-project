@@ -7,7 +7,7 @@
         @csrf
         <label class="flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
             <span class="material-symbols-outlined text-oWhite">
-                event
+                call
             </span>
 
             <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
@@ -16,7 +16,7 @@
 
         <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
             <span class="material-symbols-outlined text-oWhite">
-                event
+                lock
             </span>
 
             <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
@@ -27,9 +27,10 @@
                     visibility_off
                 </span>
             </div>
-        </label> <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
+        </label>
+        <label class="relative flex items-center px-4 gap-4 h-10 bg-current rounded-xl">
             <span class="material-symbols-outlined text-oWhite">
-                event
+                lock
             </span>
 
             <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
@@ -45,7 +46,7 @@
         <div class="flex divide-x divide-oBlack max-w-full rounded-xl overflow-hidden">
             <label class="flex flex-[3] items-center px-4 gap-4 h-10 bg-current overflow-hidden">
                 <span class="material-symbols-outlined text-oWhite">
-                    event
+                    badge
                 </span>
 
                 <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"
@@ -54,7 +55,7 @@
 
             <label class="flex flex-[2] items-center px-4 gap-4 h-10 bg-current overflow-hidden">
                 <span class="material-symbols-outlined text-oWhite">
-                    event
+                    badge
                 </span>
 
                 <input class="w-full outline-none bg-transparent text-oWhite placeholder:text-sm placeholder:text-oBlack3"

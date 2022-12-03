@@ -17,18 +17,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-//Route::get('/', function () {
-//return view('welcome');
-//});
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /**
  * Client routes
  */
-Route::get('/', [ClientHomeController::class, 'index'])->name('home');
+Route::get('/', [ClientHomeController::class, 'index'])->name('home')->middleware('auth');
 
-Route::get('/1', function () {
-    return view('client.auth.sign_in');
-})->name('auth.sign_in');
+Route::get('/signIn', [ClientAuthController::class, 'signInGet'])->name('auth.sign_in');
 
 Route::get('/signUp', [ClientAuthController::class, 'signUpGet'])->name('auth.sign_up');
 
@@ -46,6 +41,10 @@ Route::get('/7', function () {
     return view('client.user.profile');
 })->name('user.profile');
 
+
+/**
+ * Admin routes
+ */
 
 Route::get('/check', [HomeController::class, 'check']);
 

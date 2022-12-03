@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ClientUserController extends Controller
 {
-    //
-    public function bookPost()
+    public function bookCancel($ve_xe_id)
     {
-        return view('client.user.booked_ticket');
-    }
-    public function bookPut()
-    {
-        return view('client.user.booked_ticket');
+        $ve_xe = VeXe::where('ve_xe_id', $ve_xe_id)->first();
+        $ve_xe->trang_thai_id = 4;
+        $ve_xe->save();
+        return redirect()->route('user.booked');
     }
 
     public function getVeXeWithVeXeId($id)

@@ -12,7 +12,8 @@
                     <div class="flex gap-5 p-8">
                         {{-- cover --}}
                         <div class="w-1/3 flex-shrink-0 overflow-hidden pr-8 -mt-14">
-                            <img src="/images/bus.jpg" alt="Img" class="w-full aspect-[13/17] rounded-xl object-cover">
+                            <img src="{{ $chuyen->xe->hinh_anh }}" alt="Img"
+                                class="w-full aspect-[13/17] rounded-xl object-cover">
                         </div>
 
                         {{-- info --}}
@@ -71,6 +72,10 @@
                                 </span>
                             </p>
 
+                            <p>Số người:
+                                <span class="font-bold"> {{ $chuyen->ve_xe->so_nguoi }} </span>
+                            </p>
+
                             <p>Trạng thái:
                                 <span class="font-bold"> {{ $chuyen->trang_thai->ten }} </span>
                             </p>
@@ -80,20 +85,22 @@
             </div>
 
             <div class="flex">
-                <div class="flex ml-auto gap-3 whitespace-nowrap">
-
+                <form action="{{ route('user.booked_cancel', ['ve_id' => $chuyen->ve_id]) }}" method="POST"
+                    class="flex ml-auto gap-3 whitespace-nowrap">
+                    @csrf
+                    @method('PUT')
                     <a href="{{ route('user.booked') }}"
                         class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oBlack2">
                         Quay lại
                     </a>
 
                     @if ($chuyen->trang_thai->trang_thai_id == 1)
-                        <a href="{{ $href ?? '#' }}"
+                        <button type="submit" href="{{ $href ?? '#' }}"
                             class="flex items-center justify-center rounded-xl px-12 h-10 text-oWhite w-full bg-oRed">
                             Huỷ vé
-                        </a>
+                        </button>
                     @endif
-                </div>
+                </form>
             </div>
         </div>
     </div>

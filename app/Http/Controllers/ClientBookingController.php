@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Chuyen;
 use App\Models\Tinh;
+use App\Models\VeXe;
 use App\Models\Xe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientBookingController extends Controller
 {
@@ -57,6 +59,14 @@ class ClientBookingController extends Controller
 
     public function create(Request $req)
     {
-        return  $req;
+        VeXe::create([
+            'chuyen_id' => $req->chuyen_id,
+            'khoi_hanh_gio' => date('H:i:s', strtotime($req->khoi_hanh_gio)),
+            'so_nguoi' => $req->so_nguoi,
+            'khach_hang_id' => Auth::user()->id,
+            'trang_thai_id' => 1
+        ]);
+
+        return redirect()->route('user.booked');
     }
 }

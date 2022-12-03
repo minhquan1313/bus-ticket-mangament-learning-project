@@ -30,7 +30,7 @@ Route::get('/signUp', [ClientAuthController::class, 'signUpGet'])->name('auth.si
 
 Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking.index');
 Route::get('/booking/detail/{chuyen_id}', [ClientBookingController::class, 'detail'])->name('booking.detail');
-Route::post('/booking/create', [ClientBookingController::class, 'create'])->name('booking.create')->middleware('auth');
+Route::post('/booking', [ClientBookingController::class, 'create'])->name('booking.create')->middleware('auth');
 
 Route::get('/profile', [ClientAuthController::class, 'profileGet'])->name('user.profile')->middleware('auth');
 Route::post('/profile', [ClientAuthController::class, 'profilePost'])->middleware('auth');
@@ -38,6 +38,7 @@ Route::post('/profile/logout', [ClientAuthController::class, 'logOut'])->name('u
 
 Route::get('/profile/booked', [ClientUserController::class, 'booked'])->name('user.booked')->middleware('auth');
 Route::get('/profile/booked/{ve_id}', [ClientUserController::class, 'bookedDetail'])->name('user.booked_detail')->middleware('auth');
+Route::put('/profile/booked/cancel/{ve_id}', [ClientUserController::class, 'bookCancel'])->name('user.booked_cancel')->middleware('auth');
 
 
 /**

@@ -9,7 +9,7 @@
 
         <div class="container space-y-6">
             <div class="bg-oBlack2 rounded-xl">
-                <ul class="grid grid-cols-4 gap-5 p-5">
+                <ul class="grid grid-cols-2 xl:grid-cols-4 gap-5 p-5">
                     @foreach ($chuyen as $cvx)
                         <li>
                             @include('client.booking.ticket_card', [

@@ -65,7 +65,7 @@
                             </p>
 
                             <p class="">Ngày khởi hành:
-                                <span class="font-bold"> {{ $khoiHanh }}</span>
+                                <span class="font-bold"> {{ date('d-m-Y', strtotime($khoiHanh)) }}</span>
                             </p>
                         </div>
                     </div>
@@ -91,9 +91,10 @@
 
                 <form action="{{ route('booking.create') }}" method="POST" class="bg-oBlack2 rounded-xl">
                     @csrf
-                    <input type="text" class="hidden" name="from" readonly value="{{ $tinhFrom->tinh_id }}">
+                    <input type="text" class="hidden" name="chuyen_id" readonly value="{{ $chuyen->chuyen_id }}">
+                    {{-- <input type="text" class="hidden" name="from" readonly value="{{ $tinhFrom->tinh_id }}">
                     <input type="text" class="hidden" name="to" readonly value="{{ $tinhTo->tinh_id }}">
-                    <input type="text" class="hidden" name="xeId" readonly value="{{ $xe->xe_id }}">
+                    <input type="text" class="hidden" name="xeId" readonly value="{{ $xe->xe_id }}"> --}}
                     <div class="p-2 px-4 space-y-3">
 
                         <p class="text-center text-2xl font-semibold">Tóm tắt</p>
@@ -113,8 +114,12 @@
 
                             <li>
                                 <p>Thời gian khởi hành:
-                                    <input type="text" name="time" readonly class="font-bold bg-transparent p-0"
-                                        value="{{ $khoiHanh }}">
+                                    <input type="text" name="khoi_hanh_gio" readonly
+                                        class="font-bold bg-transparent p-0 hidden" value="{{ $khoiHanh }}">
+
+                                    <span class="font-bold" id="khoi_hanh_gio_span">
+                                        {{ date('d-m-Y', strtotime($khoiHanh)) }} </span>
+
                                 </p>
                             </li>
 
@@ -125,7 +130,8 @@
                             </li>
                             <li>
                                 <p>Số người:
-                                    <span class="font-bold"> {{ $_GET['person_count'] }} </span>
+                                    <input type="text" name="so_nguoi" readonly class="font-bold bg-transparent p-0"
+                                        value="{{ $_GET['person_count'] }}">
                                 </p>
                             </li>
                         </ul>

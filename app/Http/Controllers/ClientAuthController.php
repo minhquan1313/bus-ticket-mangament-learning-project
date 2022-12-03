@@ -71,6 +71,9 @@ class ClientAuthController extends Controller
             Validator::make($input, [
                 'new_password' => $rule,
                 'old_password' => $rule,
+            ], [
+                'new_password' => 'Mật khẩu không khớp',
+                'old_password' => 'Mật khẩu không trùng',
             ])->validate();
 
             if (!Hash::check($req->old_password, $user->password)) {

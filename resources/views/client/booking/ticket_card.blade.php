@@ -5,7 +5,6 @@
 
 @isset($type)
     @php
-        $objTit = ['seeDetail' => ['t' => 'Xem chi tiết', 'c' => 'bg-oGreen'], 'cancled' => ['t' => 'Đã huỷ chuyến', 'c' => 'bg-oRed'], 'bookNow' => ['t' => 'Đặt ngay', 'c' => 'bg-oYellow']];
         // $objTit = ['seeDetail' => ['t' => 'Xem chi tiết', 'c' => 'bg-oGreen'], 'cancled' => ['t' => 'Đã huỷ chuyến', 'c' => 'bg-oRed'], 'bookNow' => ['t' => 'Đặt ngay', 'c' => 'bg-oYellow']];
         $objColor = ['bg-oGreen', 'bg-oBlack3', 'bg-oBlack3', 'bg-oRed'];
         
@@ -68,7 +67,8 @@
         <div class="flex-1">
         </div>
         <p class="m-2 text-sm">Giá:
-            <span class="text-oYellow font-bold"> {{ $cvx->xe->gia_tien + round(($cvx->do_dai * 0.3) / 1000) * 1000 }}
+            <span class="text-oYellow font-bold">
+                {{ $cvx->xe->gia_tien + round(($cvx->do_dai * 0.3) / 1000) * 1000 * ($cvx->ve_xe->so_nguoi ?? $_GET['person_count']) }}
                 đ</span>
         </p>
         <a href="{{ $href ?? '#' }}"

@@ -92,11 +92,11 @@ CREATE TABLE `xe` (
 
 INSERT INTO `xe` (`xe_id`, `bien_so`, `hinh_anh`, `cho_ngoi`, `loai`, `gia_tien`, `wifi`, `bed`) VALUES
 (1, '59N-5051', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
-(2, '59N-5052', '/images/bus.jpg', 39, 'Thường', 60000, 0, 0),
-(3, '59N-5053', '/images/bus.jpg', 39, 'VIP', 70000, 1, 0),
+(2, '59N-5052', '/images/bus2.jpg', 39, 'Thường', 60000, 0, 0),
+(3, '59N-5053', '/images/bus3.jpg', 39, 'VIP', 70000, 1, 0),
 (4, '59N-5054', '/images/bus.jpg', 39, 'VIP', 90000, 0, 1),
-(5, '59N-5055', '/images/bus.jpg', 39, 'Thường', 7000, 0, 0),
-(6, '59N-5056', '/images/bus.jpg', 39, 'VIP', 120000, 1, 1),
+(5, '59N-5055', '/images/bus2.jpg', 39, 'Thường', 7000, 0, 0),
+(6, '59N-5056', '/images/bus3.jpg', 39, 'VIP', 120000, 1, 1),
 (7, '59N-5057', '/images/bus.jpg', 39, 'VIP', 50000, 0, 0);
 
 -- --------------------------------------------------------

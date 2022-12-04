@@ -1,24 +1,11 @@
-composer install
-npm i
+Gồm 2 thành viên làm bt lớn này
+Mai Thanh Bình - 2051012011
+... - ...
 
-npm run dev
-npm run serve
+Để tạo db, cô vô xampp rồi tạo collection "bus_ticket_management"
+Sau đó cô import bằng cái file "bus_ticket_management.sql" do em tạo, rồi cô tạo 2 cái cmd, 
+1 cái cô gõ "npm run dev"
+1 cái cô gõ "npm t"
 
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-// Tao controller
-php artisan make:controller ProductController
-
-// Tao moi model (1 table trong database)
-php artisan make:model Category
-
-// Tao database auth
-php artisan migrate
-
-composer require laravel/breeze
-composer require laravel/ui
-php artisan ui bootstrap
-php artisan ui bootstrap --auth
-
-// Start server
-php artisan serve
+Sau đó là có thể chạy app bình thường. Cô vào tự tạo tài khoản giúp em. Chuyến thì có gì cô xem trong db
+rồi tìm tương ứng, hoặc đơn giản cô tìm TP HCM -> Cà Mau vào ngày 2/12/2022, tại em có tạo 1 cái record ở ngày đó.

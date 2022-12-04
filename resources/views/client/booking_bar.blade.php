@@ -30,7 +30,8 @@
                 type="text" value="{{ $from ?? '' }}" placeholder="Điểm đón" name="from" required>
 
             <div id="fromSuggest"
-                class="absolute {{ $className }} inset-x-0 bg-current rounded-md shadow-md min-w-[12rem] transition pointer-events-none opacity-0 peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
+                class="absolute {{ $className }} inset-x-0 bg-current rounded-md shadow-md min-w-[12rem] transition pointer-events-none opacity-0
+                peer-focus:pointer-events-auto peer-focus:opacity-100 hover:pointer-events-auto hover:opacity-100">
 
                 <div class="py-1">
                     <ul class="max-h-72 overflow-y-scroll">

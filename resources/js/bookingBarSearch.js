@@ -22,14 +22,11 @@ const suggestMenuToInput = (inp, ...li) => {
 
     inp.addEventListener("input", () => {
         const value = removeAccents(inp.value.trim());
-        // const value = inp.value.trim().replace(/\s+/, "|");
 
         const reg = new RegExp(value, "iu");
-        // const reg = new RegExp(value, "iu");
 
         li.forEach((r) => {
             const t = r.getAttribute(dataAttr);
-            // const t = `${r.getAttribute(dataAttr)} ${r.innerText}`;
             console.log({ t });
             const isMatch = t.match(reg);
 

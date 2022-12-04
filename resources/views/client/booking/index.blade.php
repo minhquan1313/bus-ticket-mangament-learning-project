@@ -21,7 +21,6 @@
             echo $d->format('Y-m-d H:i:s');
         @endphp --}}
         @if (count($chuyen_va_xe) > 0)
-
             <p class="text-center text-2xl font-semibold">Các chuyến được tìm thấy</p>
             <div class="container space-y-6">
                 <div class="bg-oBlack2 rounded-xl">

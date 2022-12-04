@@ -22,12 +22,9 @@ class ClientBookingController extends Controller
         $tinhFrom = Tinh::where("ten_tinh", $_GET['from'])->first();
         $tinhTo = Tinh::where("ten_tinh", $_GET['to'])->first();
 
-        // $chuyenId = $tinhFrom->tinh_id . '-' . $tinhTo->tinh_id;
-
         $time = $_GET['time'];
-        $time_ = date('Y-m-d', strtotime($time . ' +1 day'));
 
-        $chuyen_va_xe = Chuyen::where('from_id', $tinhFrom->tinh_id)->where('to_id', $tinhTo->tinh_id)->where('thoi_gian_khoi_hanh', '>=',  $time)->where('thoi_gian_khoi_hanh', '<=',  $time_)->get();
+        $chuyen_va_xe = Chuyen::where('from_id', $tinhFrom->tinh_id)->where('to_id', $tinhTo->tinh_id)->where('thoi_gian_khoi_hanh', '>=',  $time)->get();
 
         foreach ($chuyen_va_xe as $cvx) {
             $xe = Xe::where('xe_id', $cvx->xe_id)->first();

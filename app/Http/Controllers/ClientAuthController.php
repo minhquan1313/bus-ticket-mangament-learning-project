@@ -73,10 +73,8 @@ class ClientAuthController extends Controller
 
             Validator::make($input, [
                 'new_password' => $rule,
-                'old_password' => $rule,
             ], [
                 'new_password' => 'Mật khẩu không khớp',
-                'old_password' => 'Mật khẩu không trùng',
             ])->validate();
 
             if (!Hash::check($req->old_password, $user->password)) {
@@ -92,7 +90,7 @@ class ClientAuthController extends Controller
             $oldImg = public_path($user->profile_photo_path);
 
             $path = 'images/' . $user->id . '/';
-            $defaultAvatar = '/images/avatar.jpg';
+            $defaultAvatar = public_path('/images/avatar.jpg');
 
             if (file_exists(public_path($path . $filename))) {
                 $filename = $this->getUniqueFileName($filename);

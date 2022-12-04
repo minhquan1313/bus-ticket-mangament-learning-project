@@ -104,7 +104,7 @@ class ClientAuthController extends Controller
                     unlink($oldImg);
                 }
             }
-            $user->profile_photo_path = '/images/' . $filename;
+            $user->profile_photo_path =  $path . $filename;
         }
 
         $user->save();

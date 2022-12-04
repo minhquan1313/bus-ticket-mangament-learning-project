@@ -9,3 +9,5 @@ Sau đó cô import bằng cái file "bus_ticket_management.sql" do em tạo, r�
 
 Sau đó là có thể chạy app bình thường. Cô vào tự tạo tài khoản giúp em. Chuyến thì có gì cô xem trong db
 rồi tìm tương ứng, hoặc đơn giản cô tìm TP HCM -> Cà Mau vào ngày 2/12/2022, tại em có tạo 1 cái record ở ngày đó.
+
+Ở lần chạy đầu tiên, nó sẽ hiện lỗi, cô bấm run migration là xong.
